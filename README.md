@@ -40,7 +40,7 @@ You can find more information on <https://yihui.org/tinytex/>
 
 #### From .tar.gz file
 
-To install from a local source file, store `zueridown_x.x.x.tar.gz` at an
+To install from a local source file, store `zueridown_main.tar.gz` at an
 arbitrary location on your computer.
 
 In RStudio, in the ‘Packages’ pane, click ‘Install’ and select the
@@ -48,7 +48,7 @@ option ‘Install from Package Archive File’. Browse to the location of
 the file and install it.
 
 Alternatively, you can download the package from <https://github.com/cynkra/zueridown>,
-by clicking 'Clone or download' / 'Download Zip'), extract it to any location, e.g., to your Desktop.
+by clicking 'Clone or download'), extract it to any location, e.g., to your Desktop.
 
 Then, run:
 
