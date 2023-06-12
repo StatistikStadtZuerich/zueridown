@@ -1,0 +1,187 @@
+% word style tabs
+%\usepackage{tabto}
+
+%https://tex.stackexchange.com/questions/395779/using-tocloft-and-parskip-generates-a-warning-about-redefining-starttoc
+\usepackage[titles]{tocloft}
+
+% no indentation, space between paragraphs
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+
+% provides the H float modifier
+\usepackage{float}
+
+% full width table (with kable)
+\usepackage{tabu}
+\tabulinesep=1.1mm
+
+% Support for kableExtra package
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{pdflscape}
+% foonotes in kable
+%\usepackage{threeparttable}
+%\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+%\usepackage{colortbl}
+
+% extended implementation of the array and tabular environments
+%\usepackage{array}
+
+% embedd graphics
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+
+% verbatim with URL-sensitive line breaks
+\usepackage{url}
+
+% units. E.g., \unitfrac{m}{s}
+%\usepackage{units}
+
+% cross-references to according to the "type" of cross-reference
+\usepackage{hyperref}
+%\usepackage{cleveref}
+
+% Increase the number of simultaneous LaTeX floats
+\usepackage{morefloats}
+
+% Simple argument parsing
+%\usepackage{xparse}
+
+% Titlesec guide: https://mirror.foobar.to/CTAN/macros/latex/contrib/titlesec/titlesec.pdf
+% smaller section headings (also needed for titleformat below)
+\usepackage[big]{titlesec}
+\titlespacing{\section}{0pt}{40pt}{50pt}
+\titleformat{\section}{\fontsize{24}{35}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\fontsize{16}{35}\bfseries}{\thesubsection}{1em}{}
+% change space between letters
+\usepackage{fontspec}
+
+% for protrusion (even margins) and expansion (fewer/better hyphenations)
+%\hyphenpenalty=7500
+% https://tex.stackexchange.com/a/335088/8057
+%\pretolerance=5000
+%\tolerance=9000
+% Do not set \lefthyphenmin, \righthyphenmin, or \<lang>hyphenmins
+% (https://tex.stackexchange.com/a/235279/8057):
+% These values add too much space between words.
+
+% omit default title page
+\renewcommand\maketitle{}
+
+%changing page color
+\usepackage{xcolor}
+\usepackage[pagecolor=none]{pagecolor}
+
+% to set up spaces between lines in title
+\usepackage{setspace}% http://ctan.org/pkg/setspace
+
+% to change between one columns and more columns 
+% without a new page
+\usepackage{multicol}
+\setlength{\columnsep}{15pt}
+% to set the picture in first page without changing the geometry
+\usepackage{tikzpagenodes}
+
+% package to create cd_footer function (without a headrule)
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+
+% pacakge to put footer in chapter
+% https://tex.stackexchange.com/questions/117328/fancyhdr-does-not-apply-same-header-footer-on-chapter-and-non-chapter-pages
+\usepackage{etoolbox}
+
+% format captions of figures & tables 
+\usepackage[labelfont=bf]{caption}
+%\newcommand\myhrulefill[1]{\leavevmode\leaders\hrule height#1\hfill\kern0pt}
+
+% declare a new format to display the title according to the stadt zurich requirement
+% #1 label
+% #2 objetct between label and text (space, - , ; etc)
+% #3 Text 
+
+% create two minipages left and right aligned
+
+% figures
+\DeclareCaptionFormat{myformat_fig}{
+\hspace{-3pt}\rule{\textwidth}{0.08em}
+\begin{minipage}[t]{.50\linewidth}
+\begin{flushleft}
+#3 
+\end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.50\linewidth}
+\begin{flushright}
+#2#1
+\end{flushright} 
+\end{minipage}
+\rule{\linewidth}{0.08em}
+\vspace*{4mm}
+}
+
+% apply the new created format
+\captionsetup[figure]{name=G -,format=myformat_fig, labelsep=space}
+
+
+% tables
+
+\DeclareCaptionFormat{myformat_tab}{
+\hspace{-3pt}\rule{\textwidth}{0.08em}
+\begin{minipage}[t]{.50\linewidth}
+\begin{flushleft}
+#3
+\end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.50\linewidth}
+\begin{flushright}
+#2#1 
+\end{flushright} 
+\end{minipage}
+}
+
+\captionsetup[table]{name=T -, format=myformat_tab, labelsep = space, skip = 0pt}
+
+\newenvironment{fig}{
+\begin{figure}[H]
+}
+{
+\end{figure}}
+
+% Environment to define symbols
+\newenvironment{symbols}[1][symbols]{
+\thispagestyle{empty}
+  \begin{minipage}[t][.65\textheight]{.5\textwidth}
+  \begin{flushleft}
+    \vspace*{1cm}
+    \textbf{\LARGE {#1}} \par
+    \vspace*{0.5cm}
+}
+{
+  \end{flushleft}
+  \end{minipage}
+}
+
+
+\usepackage[nonumberlist,nogroupskip]{glossaries-extra}
+\makenoidxglossaries
+\setglossarystyle{altlist}
+\renewcommand{\glossarysection}[2][]{}
+\loadglsentries{defns}
+
+% remove dotfilling in the table of contents
+%\renewcommand{\cftsecfont}{\fontsize{14}{0}}
+%\renewcommand{\cftsecfont}{\fontsize{12}{0}}
+%\renewcommand{\cftsecafterpnum}{\hspace*{50mm}}
+%\renewcommand{\cftsubsecafterpnum}{\hspace*{50mm}}
+
+
+% footnotes
+\usepackage[flushmargin,norule]{footmisc}
+
+%To create banner
+\usepackage[skins]{tcolorbox}

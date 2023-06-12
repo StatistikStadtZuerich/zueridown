@@ -1,0 +1,19 @@
+# defaults (should be set by asset)
+indent: true
+compact-title: true
+lang: de-DE
+subparagraph: true  # needed for titlesec
+papersize: a4
+documentclass: article
+secnumdepth: 2
+fontsize: "10pt"
+
+mainfont: "TeX Gyre Heros"
+mainfontoptions:
+- Scale=1
+
+linestretch: 1.05
+
+geometry:
+- twoside=true
+- footskip=10mm
