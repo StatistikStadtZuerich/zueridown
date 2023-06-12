@@ -8,16 +8,16 @@ Authors@R:
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: What the package does (one paragraph).
-License: What license it uses
+License: file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.2.3
 Depends: R (>= 3.5.0)
 Imports:
     knitr,
-    rmarkdown
+    rmarkdown,
+    glue
 Suggests:
     zueritheme,
     zuericolors,
     ggplot2,
     gridExtra
-
