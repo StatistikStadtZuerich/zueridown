@@ -1,0 +1,39 @@
+\definecolor{one_page_background_color}{HTML}{<<one_page_background_color>>}
+\definecolor{text_color}{HTML}{<<text_color>>}
+
+
+\addtocontents{toc}{\protect\pagestyle{empty}}
+  \titlespacing{\chapter}{0pt}{-20pt}{40pt}
+  \pagecolor{one_page_background_color}
+  \color{text_color}
+  \renewcommand{\contentsname}{Inhalt}
+  \setcounter{secnumdepth}{5}
+  \cftsetindents{section}{0em}{4em}
+  \cftsetindents{subsection}{0em}{6em}
+  \cftsetindents{subsubsection}{0em}{6em}
+  \renewcommand{\cftsecfont}{\fontsize{14}{30}\selectfont \bfseries}
+  \renewcommand{\cftsubsecfont}{\fontsize{12}{30}\selectfont}
+  \renewcommand{\cftsubsubsecfont}{\fontsize{12}{30}\selectfont}
+  \renewcommand{\cftsecpagefont}{\fontsize{12}{30}\selectfont}
+  \renewcommand{\cftsubsecpagefont}{\fontsize{12}{30}\selectfont}
+  \renewcommand{\cftsubsubsecpagefont}{\fontsize{12}{30}\selectfont}
+  \renewcommand{\cftsecdotsep}{\cftnodots}
+  \renewcommand{\cftsubsecdotsep}{\cftnodots}
+  \renewcommand{\cftsubsubsecdotsep}{\cftnodots}
+  \renewcommand{\cftsecafterpnum}{\hspace*{0mm}\vskip15pt}
+  \renewcommand{\cftsubsecafterpnum}{\hspace*{0mm}\vskip15pt}
+  \renewcommand{\cftsubsubsecafterpnum}{\hspace*{0mm}\vskip15pt}
+  \renewcommand{\cftdot}{}
+  \newgeometry{twoside=false,footskip=10mm,top=1.7cm,bottom=1.7cm,left=1.3cm,right=6.3cm,includehead,includefoot}  
+  \tableofcontents
+  \pagestyle{empty}
+  \newpage
+  \clearpage
+  \normalcolor
+   \restorepagecolor
+   \restoregeometry
+  
+\pagestyle{fancy}
+
+\vspace{-3cm}
+

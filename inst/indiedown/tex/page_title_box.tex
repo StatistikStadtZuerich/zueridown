@@ -1,0 +1,42 @@
+\thispagestyle{empty}
+
+\definecolor{title_page_background_color}{HTML}{<<title_page_background_color>>}
+\definecolor{title_page_color}{HTML}{<<title_page_color>>}
+\definecolor{title_box_color}{HTML}{<<title_box_color>>}
+\definecolor{text_color_blue}{HTML}{<<text_color_blue>>}
+\definecolor{banner}{HTML}{<<banner>>}
+
+\vspace*{-3.7cm}
+\tcbset{nobeforeafter, left skip = -13mm, right skip = -13mm}
+\begin{tcolorbox}[bicolor,sidebyside,left=0mm,top=0mm,right=0mm,bottom=0mm,
+            height=24mm,
+            sharp corners,boxrule=0pt,colback=white,
+            colbacklower=banner]
+\vspace*{5mm}            
+\hspace*{8mm}\includegraphics[height=14mm]{<<logo_path>>}
+\tcblower
+
+\end{tcolorbox}
+
+
+\newpagecolor{title_page_background_color}
+
+\vspace*{-0.7cm}
+
+\hspace*{14mm}\begin{minipage}[t][10cm][c]{0.80\textwidth}
+\noindent
+\begin{flushleft}
+\textbf{\color{title_page_color}{\fontsize{<<subtitle_size>>}{40pt}\selectfont <<subtitle>>}}\par
+\vspace*{0.2cm}
+\begin{spacing}{3.5}
+\textbf{\color{title_page_color}{{\fontsize{<<title_size>>}{80pt}\selectfont <<title>> }}}\par
+\end{spacing}
+\vspace*{0.2cm}
+\textbf{\color{title_page_color}{\fontsize{<<subtitle_below_size>>}{40pt}\selectfont <<subtitle_below>>}}
+\end{flushleft}
+\end{minipage}
+
+\tikz[remember picture, overlay] \fill[title_box_color] (current page.south west) rectangle ++(\paperwidth,16.79cm);
+
+\clearpage
+\restorepagecolor

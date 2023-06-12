@@ -1,0 +1,35 @@
+\thispagestyle{empty}
+\definecolor{last_page_background_color}{HTML}{<<last_page_background_color>>}
+\definecolor{last_page_text_color}{HTML}{<<last_page_text_color>>}
+\definecolor{last_page_link_color}{HTML}{<<last_page_link_color>>}
+
+\newpagecolor{last_page_background_color}
+
+\hspace*{10mm}\begin{minipage}[c][100mm]{0.75\textwidth}
+  \begin{flushleft}
+	  \begin{minipage}[t]{0.5\textwidth}
+		\linespread{0.75}
+	 	\vspace*{20.71mm}{\Large\bfseries\color{last_page_text_color}{<<text>>}} \newline
+		\Large\bfseries\color{last_page_link_color}\href{<<link_full>>}{<<link_label>>} \newline
+		\end{minipage}
+		\begin{minipage}[t]{0.3\textwidth}
+			\begin{flushright}
+			\vspace*{<<space_img>>}{\includegraphics[width=25mm]{<<arrow_qr_path>>}}
+			\end{flushright}
+		\end{minipage}
+	\end{flushleft}
+\end{minipage}
+\vfill
+\hspace*{10mm}\begin{minipage}[b]{0.75\textwidth}
+	\begin{flushleft}
+		\color{last_page_text_color}{<<entity>>} \newline
+		\color{last_page_text_color}{<<department>>} \newline
+		\color{last_page_text_color}{<<address>>} \newline
+		\color{last_page_text_color}{<<tel_nr>>} \newline
+		\color{last_page_link_color}\href{<<link_full>>}{<<link_label>>}
+  \end{flushleft}	
+\end{minipage}
+
+\clearpage
+\restorepagecolor
+

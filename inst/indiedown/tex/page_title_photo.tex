@@ -1,0 +1,47 @@
+\thispagestyle{empty}
+\definecolor{title_page_background_color}{HTML}{<<title_page_background_color>>}
+\definecolor{title_page_color}{HTML}{<<title_page_color>>}
+\definecolor{text_color_blue}{HTML}{<<text_color_blue>>}
+\definecolor{banner}{HTML}{<<banner>>}
+
+\vspace*{-3.7cm}
+\tcbset{nobeforeafter, left skip = -13mm, right skip = -13mm}
+\begin{tcolorbox}[bicolor,sidebyside,left=0mm,top=0mm,right=0mm,bottom=0mm,
+            height=24mm,
+            sharp corners,boxrule=0pt,colback=white,
+            colbacklower=banner]
+\vspace*{5mm}            
+\hspace*{8mm}\includegraphics[height=14mm]{<<logo_path>>}
+\tcblower
+
+\end{tcolorbox}
+
+\newpagecolor{title_page_background_color}
+
+\begin{minipage}[t][\textheight]{\textwidth}
+  \noindent
+\hspace*{14mm}\begin{minipage}[t][11.2cm][c]{0.80\textwidth}
+    \begin{flushleft}
+      \null\vspace*{\fill}
+      \textbf{\color{title_page_color}{\fontsize{<<subtitle_size>>}{40pt}\selectfont <<subtitle>>}}\par
+      \vspace*{0.2cm}
+     \begin{spacing}{3.5}
+      \textbf{\color{title_page_color}{{\fontsize{<<title_size>>}{80pt}\selectfont <<title>> }}}\par
+     \end{spacing}
+      \vspace*{0.2cm}
+      \textbf{\color{title_page_color}{\fontsize{<<subtitle_size>>}{40pt}\selectfont <<subtitle_below>>}}
+      \vspace*{\fill}
+    \end{flushleft}
+\end{minipage}
+   
+\begin{minipage}[b][16.8cm][t]{\textwidth}
+   \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south west,xshift=-1.45cm,yshift=-2.95cm] at (current page text area.south west) {\includegraphics[width=\paperwidth]{<<title_image_path>>}};
+   \end{tikzpicture}
+   \vspace{0.75in}
+\end{minipage}
+
+\end{minipage}
+\clearpage
+\restorepagecolor
+
