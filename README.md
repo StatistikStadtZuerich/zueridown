@@ -81,3 +81,9 @@ To check your version of zueridown, run"
 ```r
 packageVersion("zueridown")
 ```
+
+## Using other packages from the zueriverse
+
+More zueri-specific packages are available on github: [zueritheme](https://github.com/StatistikStadtZuerich/zueritheme) provides a ggplot-theme that is styled according to the city's CI/CD, [zuericolors](https://github.com/StatistikStadtZuerich/zuericolors) provides the CI/CD colors, and [zuericssstyle](https://github.com/StatistikStadtZuerich/zuericssstyle) has css for styling other types of documents such as html.
+
+Use the remotes package to install these packages directly from github, e.g. for zueritheme `remotes::install_github("StatistikStadtZuerich/zueritheme")`. If you are using renv, then there is no need for remotes: `renv::install("StatistikStadtZuerich/zueritheme")`.
