@@ -56,6 +56,10 @@ Then, run:
 remotes::install_local("<path_to_location>/zueridown-master", dependencies = FALSE)
 ```
 
+#### From GitLab
+
+The package can also be directly installed from here with the appropriate git credentials. If you are already cloning repos from GitLab, you can simply run `remotes::install_git("https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/zueriverse/zueridown")`. Otherwise you need to create a personal access token in your settings, and use this as a password, together with your GitLab username.
+
 ## Basic Template
 
 After installation, a new R Markdown template is available in RStudio.
