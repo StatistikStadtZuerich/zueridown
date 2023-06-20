@@ -17,6 +17,7 @@ Imports:
     rmarkdown,
     glue
 Suggests:
+    markdown,
     zueritheme,
     zuericolors,
     ggplot2,
