@@ -150,7 +150,8 @@ ggplot(data = iris,
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 :::: 
 
-```{r tab1, out.width = "\\textwidth"}
+
+```{r tab1, out.width = "\\textwidth", results='asis', warning=FALSE}
 kableExtra::kable(head(iris),
                   col.names = gsub("[.]", " ", names(iris)),
                   #longtable = TRUE,
@@ -158,8 +159,11 @@ kableExtra::kable(head(iris),
                   caption = "\\textbf{Caption title} \\newline Subcaption title",
                   booktabs = T) %>%
             kable_styling(font_size = 9, full_width = T, latex_options = "HOLD_position") %>%
-            row_spec(0,bold=TRUE)
+            row_spec(0,bold=TRUE, background="red") %>% 
+            # If full_width is FALSE do not use the full_width_tabular()
+            full_width_tabular()
 ```
+
 
 ## Vornamen der Neugeborenen
 
