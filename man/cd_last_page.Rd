@@ -12,7 +12,7 @@ cd_last_page(
   department = "[department]",
   address = "[address]",
   tel = "[tel]",
-  color_palette = cd_color_palette("palette5"),
+  color_palette = cd_color_palette("palette1"),
   arrow_qr = default("arrow"),
   arrow_qr_path = default(NULL, system.file(package = "zueridown", "indiedown", "res",
     "Beispiel-QR-Code.png"))

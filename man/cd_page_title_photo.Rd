@@ -8,7 +8,7 @@ cd_page_title_photo(
   title = default(rmarkdown::metadata$title, "Title"),
   subtitle = default(rmarkdown::metadata$subtitle, "Subtitle"),
   date = default(rmarkdown::metadata$date, cd_format_date(Sys.Date())),
-  color_palette = default(cd_color_palette("palette5")),
+  color_palette = default(cd_color_palette("palette1")),
   subtitle_below = "",
   title_image_path = default(NULL, system.file(package = "zueridown", "example",
     "Jakob.jpg")),

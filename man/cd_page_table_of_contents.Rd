@@ -4,7 +4,7 @@
 \alias{cd_page_table_of_contents}
 \title{Title page LaTeX code}
 \usage{
-cd_page_table_of_contents(color_palette = cd_color_palette("palette5"))
+cd_page_table_of_contents(color_palette = cd_color_palette("palette1"))
 }
 \arguments{
 \item{color_palette}{Character. Set the color palette for the background in 
