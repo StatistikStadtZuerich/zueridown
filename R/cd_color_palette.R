@@ -81,7 +81,7 @@ cd_color_palette <- function(name = "palette1") {
   color_palette_pastel3 <-
     list(
       banner = "0076AA",
-      title_page_background_color = "DBFCFC", # upper background
+      title_page_background_color = "DFFCFF", # upper background
       title_page_color = "293380", # title
       one_page_background_color = "293380",
       text_color = "FFFFFF",
@@ -190,7 +190,7 @@ cd_color_palette <- function(name = "palette1") {
       last_page_link_color = "DBEACB"
     )
 
-  color_palette_contrast2 <-
+  color_palette_contrast3 <-
     list(
       banner = "004D76",
       title_page_background_color = "23C3F1", # upper background
