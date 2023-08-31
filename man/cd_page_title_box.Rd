@@ -19,8 +19,10 @@ cd_page_title_box(
 }
 \arguments{
 \item{title}{Character. Document title. Default title parameter in yml.
-Use this parameter to specify a title
-different from the title in the yml header of the document.}
+Use this parameter to specify a different title
+ from the title declared in the yml header of the document. If a parameter is used 
+ in the yml, remove the title from the yml and used this parameter to 
+ specify the title (see examples).}
 
 \item{subtitle}{Character. Document subtitle. Default subtitle parameter in yml.
 Use this parameter to specify a subtitle
@@ -50,4 +52,16 @@ cover page. Default is the logo included in the package.}
 \description{
 Generates 'asis' LaTeX code to create a title page with a box color in the front
 page.
+}
+\examples{
+# using title defined in the yml and default style values
+cd_page_title_box()
+# using title and subtitle with parameters defined in the yml,
+# and default style values.
+# title and subtitle should be removed from the yml.
+cd_page_title_box(
+  title = paste0("Title", params$a),
+  subtitle = paste0("Subtitle", params$b)
+  )
+
 }
