@@ -10,7 +10,9 @@ numbersections  : true
 bibliography    : biblio.bibtex
 link-citations  : true
 
-output          : zueridown::zueridown
+output          : 
+  zueridown::zueridown:
+    keep_tex: true
 
 ---
 
@@ -107,6 +109,10 @@ in Zürich Menschen aus 170 verschiedenen Nationen. In welchen Sprachen kommuniz
 welchem Kontext miteinander?")
 ```
 
+```{r}
+cd_big_paragraph("Dieser Bericht beinhaltet die im Rahmen der Bevölkerungsbefragung (BVB) 2023 von Statistik Stadt Zürich (SSZ) angefertigten Standardauswertungen zum Thema Diskriminierung")
+```
+
 :::: {.multicols data-latex="{2}"}
 
 Im Umfeld der zunehmenden Internationalisierung haben immer noch vier von fünf Zürcherinnen und Zürchern Schweizerdeutsch oder Hochdeutsch als Hauptsprache (79%). Englisch (9 %), Italienisch (6 %) und Französisch (5 %) sind ebenfalls häufig vertreten. Dabei ist der Anteil der Mehrsprachigen beträchtlich: In Zürich hat jede fünfte Person mindestens zwei Hauptsprachen. Die 15- bis 24-Jährigen sind mit einem Anteil von 29 Prozent am häufigsten mehrsprachig. 
@@ -115,6 +121,12 @@ Die Internationalisierung macht sich auch in der Arbeitswelt bemerkbar. Neben Sc
 
 Von den Zürcherinnen und Zürchern haben 21 Prozent nicht Deutsch und 12 Prozent weder eine Landessprache noch Englisch als Hauptsprache. 8 Prozent der Zürcherin- nen und Zürcher benutzen in ihrem Umfeld nicht Schweizerdeutsch oder Hochdeutsch (25 600 Personen) und knapp 3 Prozent weder eine Landessprache noch Eng- lisch. Der letztgenannte Anteil entspricht ungefähr
 8500 Personen.^[This is a footnote.]
+
+::::
+
+\newpage
+
+:::: {.multicols data-latex="{2}"}
 
 Nach Bildungsniveau haben zwei Personengruppen be- sonders häufig nicht Deutsch als Hauptsprache: Einer- seits sind es Menschen mit niedrigem, anderseits solche mit hohem Bildungsabschluss. Umgekehrt kommt bei Personen mit mittlerem Bildungsstand Deutsch oft als Hauptsprache vor. Dieses Muster ist bei den Menschen ei- niger Nationalitäten wie Italien^[This is a footnote.], Portugal, Spanien, Serbi- en, Türkei oder Griechenland zu beobachten. Dabei sind die Unterschiede nach Bildungsniv %>% eau beträchtlich: Bei- spielsweise haben Portugiesinnen und Portugiesen ,mitt- leren Bildungsstandes (Sekundarstufe 2) zu 49 Prozent nicht Hauptsprache Deutsch; bei Sekundarstufe 1 und Tertiärstufe hingegen liegt der Anteil deutlich höher (86 % respektive 88 %). Anzahlmässig sind von den Portugiesin- nen und Portugiesen ohne Hauptsprache Deutsch diejeni- gen mit Bildungsstand Sekundarstufe 1 in Zürich klar am häufigsten^[This is a footnote.]. Anders sieht es bei Menschen mit spanischer oder französischer Nationalität aus: Von denjenigen ohne Hauptsprache Deutsch sind solche mit Tertiärbildung an- zahlmässig am stärksten vertreten.
 
@@ -127,7 +139,6 @@ Die aktuellen Daten zeigen jedoch, dass ein beträchtlicher Teil der Stadtzürch
 
 \section[short title]{Erstes Kapitel, welches einen ganz ganz ganz ganz Langen Title hat}
 
-#  Erstes Kapitel, welches einen ganz ganz ganz ganz Langen Title hat
 
 :::: {.multicols data-latex="{2}"}
 
@@ -147,8 +158,10 @@ ggplot(data = iris,
 :::::
 
 :::: {.multicols data-latex="{2}"}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.^[This is a footnote.]
 :::: 
+
+\newpage
 
 
 ```{r tab1, out.width = "\\textwidth", results='asis', warning=FALSE}
@@ -170,7 +183,12 @@ kableExtra::kable(head(iris),
 :::: {.multicols data-latex="{2}"}
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Figura \ref{fig:figura1} Table \ref{tab:tab1}
 
+\section*{prueba}\label{prueba}
+\addcontentsline{toc}{section}{prueba}
+
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+#  4 Kapitel, welches einen ganz ganz ganz ganz Langen Title hat {.unnumbered}
 
 Lorem ipsum dolor sit amet, consetetur \gls{BFS} iam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren \gls{Konfidenzintervall}. \gls{ABS}
 Lorem ipsum dolor sit amet, consetetur \gls{ABS} iam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren \gls{Konversionssaldo}.  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
@@ -187,7 +205,7 @@ To include your reference in any section, you can follow the common [Rmarkdown c
 ::: {#refs}
 :::
 
-# Glossar {.unlisted .unnumbered}  
+# Glossar {.unnumbered}
 ```{r}
 cd_page_glossary()
 ```

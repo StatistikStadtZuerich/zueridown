@@ -1,0 +1,231 @@
+---
+title           : "Report with Bibliography and without glossary"
+subtitle        : "Analyse | 1/2020"
+author          : "cynkra GmbH"
+
+twocolumn       : false      # false (default) true
+lang            : de-DE     # de-DE (default) en-US
+numbersections  : true
+
+bibliography    : biblio.bibtex
+link-citations  : true
+
+output          : 
+  zueridown::zueridown:
+    keep_tex: true
+
+---
+
+```{r, include = FALSE}
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+library(zueritheme)
+library(zuericolors)
+theme_set(ssz_theme())
+library(zueridown)
+cd_knit_chunk_opts()
+```
+
+```{r}
+cd_footer("Statistik Stadt Zürich | Vornamenverzeichnis 2019")
+# cd_page_title_photo(
+#   subtitle_below = "Subtitle Below",
+#   title_size = "40pt",
+#   # Change the path to the image for the cover page
+#   # title_image_path = "/Users/Downloads/photo_1.jpg",
+#   color_palette = cd_color_palette("palette1"),
+#   #logo_path = "/Users/Downloads/other_logo.jpg"
+# )
+
+cd_page_title_box(
+  # subtitle_below = "Subtitle Below",
+  title_size = "40pt",
+  color_palette = cd_color_palette("palette5"),
+  #logo_path = "/Users/Downloads/other_logo.jpg"
+  )
+```
+
+:::: {.symbols data-latex="[Zeichenerklärung]"}
+
+```{r, out.width = "0.5\\textwidth"}
+symbols_table <- tibble(
+     symbol = c("Ein Strich ( – )",
+                "Eine Null (0 oder 0,0)",
+                "Drei Punkte ( ... )",
+                "Eine Wellenlinie ( ~ )"
+                ),
+     description = c("anstelle einer Zahl bedeutet, dass nichts vorkommt ( = Null ).",
+                     "anstelle einer anderen Zahl bezeichnet eine Grösse,
+                     die kleiner ist als die Hälfte der kleinsten verwendeten Einheit.",
+                     "anstelle einer Zahl bedeuten, dass diese nicht erhältlich
+                     ist oder dass sie weggelassen wurde, weil sie keine Aussagekraft hat.",
+                     "zwischen zwei Jahreszahlen (z. B. 2009 ~ 2010) gibt an,
+                     dass es sich nicht um Kalender-, sondern um Schul- oder Geschäftsjahre,
+                     Spielsaisons usw. handelt."
+)
+   )
+
+kableExtra::kable(symbols_table,
+                  col.names = NULL,
+                  format="latex",
+                  booktabs=TRUE,
+                  linesep = "\\addlinespace") %>%
+  kable_styling( full_width = F, position = "left", font_size = 10) %>%
+  column_spec(1, width = "4cm") %>%
+  column_spec(2, width = "7cm") %>%
+  sub("\\\\toprule", "", .) %>%
+  sub("\\\\bottomrule", "", .)
+```
+
+::::
+
+
+```{r}
+cd_page_impressum(
+  city = "Stadt Zürich",
+  department = "Statistik Stadt Zürich",
+  address = "Napfgasse 6, 8001 Zürich",
+  tel = "+41 44 412 08 00",
+  email = "statistik@zuerich.ch",
+  web = "stadt-zuerich.ch/Statistik",
+  date = "Mai 2021",
+  authors = "Author 1\\\\
+             Author 2\\\\
+             Author 3",
+  photo = FALSE,
+  credit = "[credit]",
+  # When the "Zeichenerklärung" above is not necessary the parameter space 
+  # should be set to 15cm (space = "15cm")
+  space = "0cm")
+cd_page_table_of_contents()
+```
+
+# Zusammenfassung {-}
+
+```{r}
+cd_big_paragraph("Die Stadt Zürich ist in den letzten Jahrzehnten vielfältiger und internationaler geworden; derzeit leben
+in Zürich Menschen aus 170 verschiedenen Nationen. In welchen Sprachen kommunizieren diese in
+welchem Kontext miteinander?")
+```
+
+```{r}
+cd_big_paragraph("Dieser Bericht beinhaltet die im Rahmen der Bevölkerungsbefragung (BVB) 2023 von Statistik Stadt Zürich (SSZ) angefertigten Standardauswertungen zum Thema Diskriminierung")
+```
+
+:::: {.multicols data-latex="{2}"}
+
+Im Umfeld der zunehmenden Internationalisierung haben immer noch vier von fünf Zürcherinnen und Zürchern Schweizerdeutsch oder Hochdeutsch als Hauptsprache (79%). Englisch (9 %), Italienisch (6 %) und Französisch (5 %) sind ebenfalls häufig vertreten. Dabei ist der Anteil der Mehrsprachigen beträchtlich: In Zürich hat jede fünfte Person mindestens zwei Hauptsprachen. Die 15- bis 24-Jährigen sind mit einem Anteil von 29 Prozent am häufigsten mehrsprachig. 
+
+Die Internationalisierung macht sich auch in der Arbeitswelt bemerkbar. Neben Schweizerdeutsch (81 %) oder Hochdeutsch (56 %) ist Englisch weitverbreitet: Über ein Drittel der in der Stadt Zürich Arbeitenden spricht bei der Arbeit auch englisch (37 %). Die Landessprachen Franzö- sisch (11 %) und Italienisch (8 %) sind deutlich seltener.^[Die Internationalisierung macht sich auch in der Arbeitswelt bemerkbar. Neben Schweizerdeutsch (81 %) oder Hochdeutsch (56 %) ist Englisch weitverbreitet: Über ein Drittel der in der Stadt Zürich Arbeitenden spricht bei der Arbeit auch englisch (37 %). Die Landessprachen Franzö- sisch (11 %) und Italienisch (8 %) sind deutlich seltener.]
+
+Von den Zürcherinnen und Zürchern haben 21 Prozent nicht Deutsch und 12 Prozent weder eine Landessprache noch Englisch als Hauptsprache. 8 Prozent der Zürcherin- nen und Zürcher benutzen in ihrem Umfeld nicht Schweizerdeutsch oder Hochdeutsch (25 600 Personen) und knapp 3 Prozent weder eine Landessprache noch Eng- lisch. Der letztgenannte Anteil entspricht ungefähr
+8500 Personen.^[This is a footnote.]
+
+::::
+
+\newpage
+
+:::: {.multicols data-latex="{2}"}
+
+Nach Bildungsniveau haben zwei Personengruppen be- sonders häufig nicht Deutsch als Hauptsprache: Einer- seits sind es Menschen mit niedrigem, anderseits solche mit hohem Bildungsabschluss. Umgekehrt kommt bei Personen mit mittlerem Bildungsstand Deutsch oft als Hauptsprache vor. Dieses Muster ist bei den Menschen ei- niger Nationalitäten wie Italien^[This is a footnote.], Portugal, Spanien, Serbi- en, Türkei oder Griechenland zu beobachten. Dabei sind die Unterschiede nach Bildungsniv %>% eau beträchtlich: Bei- spielsweise haben Portugiesinnen und Portugiesen ,mitt- leren Bildungsstandes (Sekundarstufe 2) zu 49 Prozent nicht Hauptsprache Deutsch; bei Sekundarstufe 1 und Tertiärstufe hingegen liegt der Anteil deutlich höher (86 % respektive 88 %). Anzahlmässig sind von den Portugiesin- nen und Portugiesen ohne Hauptsprache Deutsch diejeni- gen mit Bildungsstand Sekundarstufe 1 in Zürich klar am häufigsten^[This is a footnote.]. Anders sieht es bei Menschen mit spanischer oder französischer Nationalität aus: Von denjenigen ohne Hauptsprache Deutsch sind solche mit Tertiärbildung an- zahlmässig am stärksten vertreten.
+
+Wie lange dauert es, bis aus dem Ausland Zuziehende Deutsch als Hauptsprache betrachten? Bei den 15- bis 24-Jährigen zeigt sich ein klares Muster: Die Anteile derje- nigen, deren Hauptsprache nicht Deutsch ist, sinken von 58 Prozent (höchstens ein Jahr in der Schweiz) auf 32 (fünf bis neun Jahre) sowie 7 Prozent (zehn bis vierzehn Jahre; steile «Lernkurve»). Um das 45. Altersjahr gibt es einen Bruchpunkt: Ab diesem Alter ist der Anteil^[This is a footnote.] mit Hauptspra- che Deutsch kaum von der Aufenthaltsdauer in der Schweiz abhängig. Viele Ältere wohnen bereits länger in der Schweiz, haben jedoch nicht häufiger Hauptsprache Deutsch als die erst vor Kurzem Zugezogenen (flache «Lernkurve»).
+
+In ihrem ergänzenden Kommentar (Kapitel 5) beleuchtet die städtische Integrationsförderung die vorliegenden Zahlen. Dabei zeigt sich, dass bei der Interpretation der Daten auch methodische Fragen relevant sind. Beispiels- weise stand Mehrsprachigkeit lange nicht im Fokus der Behörden. Bis in das Jahr 2000 war es in der Volkszählung nicht möglich, mehrere Hauptsprachen anzugeben.
+Die aktuellen Daten zeigen jedoch, dass ein beträchtlicher Teil der Stadtzürcher Bevölkerung mehrsprachig ist. Die Ergebnisse zeigen auch, dass Deutsch als Lokalsprache in Zürich nach wie vor zentral ist. Und Deutsch wird ge- lernt: 13 000 erwachsene Zürcherinnen und Zürchern ver- bessern pro Jahr freiwillig ihre Deutschkenntnisse.
+
+::::
+
+\section[short title]{Erstes Kapitel, welches einen ganz ganz ganz ganz Langen Title hat}
+
+
+:::: {.multicols data-latex="{2}"}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+::::
+
+::::: {.fig data-latex=""}
+```{r, results='asis'}
+cd_caption_subcaption("Caption title", "Subcaption title", "fig:figura1")
+ggplot(data = iris,
+       aes(x = Sepal.Length,
+           y = Sepal.Width,
+           color = as.factor(Species))) +
+  geom_point(size = 2) +
+  ssz_theme(base_size = 12, ausrichtung = "x")
+```
+:::::
+
+:::: {.multicols data-latex="{2}"}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.^[This is a footnote.]
+:::: 
+
+\newpage
+
+
+```{r tab1, out.width = "\\textwidth", results='asis', warning=FALSE}
+kableExtra::kable(head(iris),
+                  col.names = gsub("[.]", " ", names(iris)),
+                  #longtable = TRUE,
+                  table.env='table',
+                  caption = "\\textbf{Caption title} \\newline Subcaption title",
+                  booktabs = T) %>%
+            kable_styling(font_size = 9, full_width = T, latex_options = "HOLD_position") %>%
+            row_spec(0,bold=TRUE, background="red") %>% 
+            # If full_width is FALSE do not use the full_width_tabular()
+            full_width_tabular()
+```
+
+
+## Vornamen der Neugeborenen
+
+:::: {.multicols data-latex="{2}"}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Figura \ref{fig:figura1} Table \ref{tab:tab1}
+
+\section*{prueba}\label{prueba}
+\addcontentsline{toc}{section}{prueba}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+#  4 Kapitel, welches einen ganz ganz ganz ganz Langen Title hat {.unnumbered}
+
+ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+
+::::
+
+## How to use the references?
+
+To include your reference in any section, you can follow the common [Rmarkdown citation ](https://bookdown.org/yihui/bookdown/citations.html), for instance to cite the example above you can use `[see @daas2015big]` and it looks like: see @daas2015big.
+
+\newpage
+# Bibliographie {-}
+::: {#refs}
+:::
+
+
+```{r}
+cd_page_table_of_figures()
+cd_page_list_of_tables()
+```
+
+```{r}
+cd_last_page(
+  text = "Mehr Zahlen und Fakten  finden Sie unter",
+  link_label = "stadt-zuerich.ch",
+  link_full = "stadt-zuerich.ch/statistik",
+  entity = "Stadt Zürich",
+  department = "[department]",
+  address = "[address]",
+  tel = "[tel]",
+  color_palette = cd_color_palette("palette5"),
+  # A QR image (arrow_qr = "qr")
+  # or an arrow (arrow_qr = "arrow") can be included
+  arrow_qr = "arrow",
+  # When "qr" is selected, please specify the path for the image.
+  # Otherwise a sample image is shown.
+  # arrow_qr_path = 
+)
+```
+
