@@ -10,7 +10,7 @@
 #' @export
 #'
 cd_page_table_of_contents <- function(
-  color_palette = cd_color_palette("palette5")
+  color_palette = cd_color_palette("palette1")
 ) {
   indiedown_path <- indiedown_path_tex()
 

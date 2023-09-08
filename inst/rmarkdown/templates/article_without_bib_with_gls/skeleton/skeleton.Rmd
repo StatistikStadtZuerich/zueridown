@@ -45,7 +45,7 @@ cd_footer(foot_text = "Statistik Stadt Zürich | Foot text")
 cd_page_title_box(
   # subtitle_below = "Subtitle Below",
   title_size = "40pt",
-  color_palette = cd_color_palette("palette5"),
+  color_palette = cd_color_palette("palette1"),
   #logo_path = "/Users/Downloads/other_logo.jpg"
   )
 ```
@@ -225,7 +225,7 @@ cd_last_page(
   department = "[department]",
   address = "[address]",
   tel = "[tel]",
-  color_palette = cd_color_palette("palette5"),
+  color_palette = cd_color_palette("palette1"),
   # A QR image (arrow_qr = "qr")
   # or an arrow (arrow_qr = "arrow") can be included
   arrow_qr = "arrow",

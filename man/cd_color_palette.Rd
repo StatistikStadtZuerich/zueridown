@@ -4,7 +4,7 @@
 \alias{cd_color_palette}
 \title{Color Palettes}
 \usage{
-cd_color_palette(name = "palette5")
+cd_color_palette(name = "palette1")
 }
 \description{
 There are five color palettes defined.

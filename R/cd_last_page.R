@@ -36,7 +36,7 @@ cd_last_page <- function(
   department = "[department]",
   address = "[address]",
   tel = "[tel]",
-  color_palette = cd_color_palette("palette5"),
+  color_palette = cd_color_palette("palette1"),
   arrow_qr = default("arrow"),
   arrow_qr_path = default(
     NULL,
