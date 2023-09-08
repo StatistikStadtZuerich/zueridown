@@ -91,3 +91,27 @@ packageVersion("zueridown")
 More zueri-specific packages are available on github: [zueritheme](https://github.com/StatistikStadtZuerich/zueritheme) provides a ggplot-theme that is styled according to the city's CI/CD, [zuericolors](https://github.com/StatistikStadtZuerich/zuericolors) provides the CI/CD colors, and [zuericssstyle](https://github.com/StatistikStadtZuerich/zuericssstyle) has css for styling other types of documents such as html.
 
 Use the remotes package to install these packages directly from github, e.g. for zueritheme `remotes::install_github("StatistikStadtZuerich/zueritheme")`. If you are using renv, then there is no need for remotes: `renv::install("StatistikStadtZuerich/zueritheme")`.
+
+## Parameterized reports
+You can use [parameters in R Markdown reports](https://bookdown.org/yihui/rmarkdown/params-declare.html) using the zueridown template. However, two relevant conditions take place.
+
+First, it is not possible to include in the YAML r calls like `r params$country`. Therefore, if your document has a title or a subtitle using a parameter, you should use the `title` and/or `subtitle` parameters in the function `cd_page_title_box` or `cd_page_title_box` accordingly, for instance:
+
+```
+cd_page_title_box(
+  title = paste0("Stadt Zürich: Auswertung", params$country, "verkehrszählstelle", params$Name),
+  title_size = "40pt",
+  color_palette = cd_color_palette("palette5"),
+  )
+
+```
+
+Second, you should use the `zueridown` output format to render the parameterized report. Consequently, after creating a zueridown template (for instance: `"report.Rmd"`) use the option `output_format` as in the following example:
+
+```
+  rmarkdown::render(
+  input = "report.Rmd",
+  output_format = zueridown::zueridown(),
+  output_file = "Country_1_report.pdf",
+  params = list(country = "Switzerland", Name = "name_1"))
+```
