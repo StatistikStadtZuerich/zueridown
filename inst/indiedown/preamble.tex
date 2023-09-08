@@ -171,7 +171,15 @@
 \makenoidxglossaries
 \setglossarystyle{altlist}
 \renewcommand{\glossarysection}[2][]{}
+
+\IfFileExists{defns.tex}{
+\usepackage[nonumberlist,nogroupskip]{glossaries-extra}
+\makenoidxglossaries
+\setglossarystyle{altlist}
+\renewcommand{\glossarysection}[2][]{}
 \loadglsentries{defns}
+}{}
+
 
 % remove dotfilling in the table of contents
 %\renewcommand{\cftsecfont}{\fontsize{14}{0}}
