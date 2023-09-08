@@ -1,5 +1,5 @@
 ---
-title           : "Report \\newline with glossary and without Bibliography"
+title           : "Report \\newline with glossary but without Bibliography"
 subtitle        : "Subtitle above title"
 author          : "cynkra GmbH"
 

@@ -1,5 +1,5 @@
 ---
-title           : "Report with Bibliography and without glossary"
+title           : "Report with Bibliography but without glossary"
 subtitle        : "Analyse | 1/2020"
 author          : "cynkra GmbH"
 
