@@ -1,6 +1,6 @@
 ---
-title           : "Report \\newline with glossary but without Bibliography"
-subtitle        : "Subtitle above title"
+title           : "Bericht \\newline mit Glossar und Bibliografie"
+subtitle        : "Untertitel"
 author          : "cynkra GmbH"
 
 twocolumn       : false      # false (default) true
@@ -25,7 +25,7 @@ cd_knit_chunk_opts()
 
 ```{r}
 # use this function to change the text for the footer of pages
-cd_footer(foot_text = "Statistik Stadt Zürich | Foot text")
+cd_footer(foot_text = "Statistik Stadt Zürich | Bericht")
 
 # For the first page you can have a photo or a box color
 ## If the photo cover page is desired use ?cd_page_title_photo() function
@@ -141,7 +141,7 @@ Die aktuellen Daten zeigen jedoch, dass ein beträchtlicher Teil der Stadtzürch
 
 ::::
 
-\section[short title]{Erstes Kapitel, welches einen ganz ganz ganz ganz Langen Title hat}
+\section[Erstes Kapitel]{Erstes Kapitel, welches einen ganz ganz ganz ganz Langen Title hat}
 
 :::: {.multicols data-latex="{2}"}
 
@@ -151,13 +151,14 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 ::::: {.fig data-latex=""}
 ```{r figura1, results='asis'}
-cd_caption_subcaption("Caption title", "Subcaption title", "fig:figura1")
+cd_caption_subcaption("Titel der Grafik", "Untertitel", "fig:figura1")
 ggplot(data = iris,
        aes(x = Sepal.Length,
            y = Sepal.Width,
            color = as.factor(Species))) +
   geom_point(size = 2) +
-  ssz_theme(base_size = 12)
+  ssz_theme(base_size = 12,
+            grid_lines = "both")
 ```
 :::::
 
@@ -171,15 +172,15 @@ kableExtra::kable(head(iris),
                   col.names = gsub("[.]", " ", names(iris)),
                   #longtable = TRUE,
                   table.env='table',
-                  caption = "\\textbf{Caption title} \\newline Subcaption title",
+                  caption = "\\textbf{Titel der Tabelle} \\newline Untertitel der Tabelle",
                   booktabs = T) %>%
             kable_styling(font_size = 9, full_width = T, latex_options = "HOLD_position") %>%
-            row_spec(0,bold = TRUE, background = "red") %>% 
+            row_spec(0, bold = TRUE) %>% 
             # If full_width is FALSE do not use the full_width_tabular()
             full_width_tabular()
 ```
 
-## Vornamen der Neugeborenen
+## Zweites Kapitel
 
 :::: {.multicols data-latex="{2}"}
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Figura \ref{fig:figura1} Table \ref{tab:tab1}
