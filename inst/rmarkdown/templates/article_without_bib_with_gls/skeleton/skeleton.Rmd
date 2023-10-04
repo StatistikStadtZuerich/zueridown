@@ -1,6 +1,6 @@
 ---
-title           : "Bericht \\newline mit Glossar und Bibliografie"
-subtitle        : "Untertitel"
+title           : "Bericht ohne Bibliografie und mit Glossar"
+subtitle        : "Zweiter Titel"
 author          : "cynkra GmbH"
 
 twocolumn       : false      # false (default) true
@@ -151,7 +151,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 ::::: {.fig data-latex=""}
 ```{r figura1, results='asis'}
-cd_caption_subcaption("Titel der Grafik", "Untertitel", "fig:figura1")
+cd_caption_subcaption("Titel der Grafik", "Untertitel der Grafik", "fig:figura1")
 ggplot(data = iris,
        aes(x = Sepal.Length,
            y = Sepal.Width,
