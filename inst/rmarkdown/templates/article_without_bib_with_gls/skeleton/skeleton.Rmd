@@ -95,7 +95,7 @@ cd_page_impressum(
   tel = "+41 44 412 08 00",
   email = "statistik@zuerich.ch",
   web = "stadt-zuerich.ch/Statistik",
-  date = "Mai 2021",
+  date = "Oktober 2023",
   authors = "Author 1\\\\
              Author 2\\\\
              Author 3",
@@ -115,10 +115,6 @@ cd_page_table_of_contents()
 cd_big_paragraph("Die Stadt Zürich ist in den letzten Jahrzehnten vielfältiger und internationaler geworden; derzeit leben
 in Zürich Menschen aus 170 verschiedenen Nationen. In welchen Sprachen kommunizieren diese in
 welchem Kontext miteinander?")
-```
-
-```{r}
-cd_big_paragraph("Dieser Bericht beinhaltet die im Rahmen der Bevölkerungsbefragung (BVB) 2023 von Statistik Stadt Zürich (SSZ) angefertigten Standardauswertungen zum Thema Diskriminierung")
 ```
 
 :::: {.multicols data-latex="{2}"}
@@ -151,10 +147,7 @@ Die aktuellen Daten zeigen jedoch, dass ein beträchtlicher Teil der Stadtzürch
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
-
 ::::
-
-
 
 ::::: {.fig data-latex=""}
 ```{r figura1, results='asis'}
@@ -164,7 +157,7 @@ ggplot(data = iris,
            y = Sepal.Width,
            color = as.factor(Species))) +
   geom_point(size = 2) +
-  ssz_theme(base_size = 12, ausrichtung = "x")
+  ssz_theme(base_size = 12)
 ```
 :::::
 
@@ -181,7 +174,7 @@ kableExtra::kable(head(iris),
                   caption = "\\textbf{Caption title} \\newline Subcaption title",
                   booktabs = T) %>%
             kable_styling(font_size = 9, full_width = T, latex_options = "HOLD_position") %>%
-            row_spec(0,bold=TRUE, background="red") %>% 
+            row_spec(0,bold = TRUE, background = "red") %>% 
             # If full_width is FALSE do not use the full_width_tabular()
             full_width_tabular()
 ```
@@ -201,6 +194,8 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
 
 ::::
+
+\newpage
 
 # Glossar {.unnumbered}
 <!-- To remove this section from the table of contents,
