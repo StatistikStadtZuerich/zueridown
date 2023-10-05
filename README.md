@@ -1,17 +1,15 @@
-<img src='inst/example/Hexagon_zueridown_official.png' align="right" height="138.5" />
+<img src='inst/indiedown/res/Hexagon_zueridown_official.png' align="right" height="138.5" />
 
 # zueridown R Markdown template
 
-zueridown makes it easy to generate customized R Markdown PDF documents that follow the corporate design of Stadt Zürich.
-
-zueridown is based on the CRAN package [indiedown](https://cynkra.github.io/indiedown/), which lays down the framework for customization.
+`zueridown` makes it easy to generate customized R Markdown PDF documents that follow the corporate design of the [city of Zurich](https://www.stadt-zuerich.ch/cd/de/index.html). It is based on the CRAN package [indiedown](https://cynkra.github.io/indiedown/), which lays down the framework for customization.
 
 ## Installation
 
 ### Install tinytex
 
-To create a pdf document using zueridown you need some Latex packages. 
-To install those packages you can install **tinytex** using the following 
+To create a pdf document using `zueridown` you need some Latex packages. 
+To install those packages you can install `tinytex` using the following 
 lines of code in R:
 
 ```{r}
@@ -20,7 +18,7 @@ tinytex::install_tinytex()
 # to uninstall TinyTeX, run tinytex::uninstall_tinytex() 
 ```
 
-Tinytex automatically will install all packages need for zueridown. However, 
+`tinytex` automatically will install all packages needed for `zueridown`. However, 
 if you get an error due to some missing package, you can use the following 
 helper functions:
 
@@ -45,12 +43,12 @@ You can find more information on <https://yihui.org/tinytex/>
 To install from a local source file, store `zueridown_main.tar.gz` at an
 arbitrary location on your computer.
 
-In RStudio, in the ‘Packages’ pane, click ‘Install’ and select the
-option ‘Install from Package Archive File’. Browse to the location of
+In R Studio, in the `Packages` pane, click `Install` and select the
+option `Install from Package Archive File`. Browse to the location of
 the file and install it.
 
 Alternatively, you can download the package from <https://github.com/cynkra/zueridown>,
-by clicking 'Clone or download'), extract it to any location, e.g., to your Desktop.
+by clicking `Clone or download`, extract it to any location, e.g., to your Desktop.
 
 Then, run:
 
@@ -64,25 +62,27 @@ The package can also be directly installed from here with the appropriate git cr
 
 ## Basic Template
 
-After installation, a new R Markdown template is available in RStudio.
-To open, use ‘File’, ‘New File’, ‘R Markdown’. 
+After installation, a new R Markdown template is available in R Studio.
+To open, use `File`, `New File`, `R Markdown`. 
 
 ![](inst/indiedown/res/file_new_file.png)
 
-Click ‘From Template’ and select one of the templates:
+Click `From Template` and select one of the templates:
 
- - ‘zueridown document’. 
- - ‘zueridown document with bibliography or glossary ’.
+ - `zueridown document with glossary and without Bibliography`. 
+ - `zueridown document with bibliography and glossary`.
+ - `zueridown document with bibliography and without glossary`
+ - `zueridown document without glossary and bibliography`
 
 ![](inst/indiedown/res/zueridown_tplt.png)
 
-After saving the file on your computer, you can use the ‘Knit’ button to produce a basic PDF document based on this template.
+After saving the file on your computer, you can use the `Knit` button to produce a basic PDF document based on this template.
 
 ![](inst/indiedown/res/knit.png)
 
 ## Version
 
-To check your version of zueridown, run"
+To check your version of `zueridwon`, run:
 
 ```r
 packageVersion("zueridown")
@@ -94,8 +94,10 @@ More zueri-specific packages are available on github: [zueritheme](https://githu
 
 Use the remotes package to install these packages directly from github, e.g. for zueritheme `remotes::install_github("StatistikStadtZuerich/zueritheme")`. If you are using renv, then there is no need for remotes: `renv::install("StatistikStadtZuerich/zueritheme")`.
 
+Before using `zueridwon` we recommend installing and the newest versions of `zuericolors` and `zuericolors`.
+
 ## Parameterized reports
-You can use [parameters in R Markdown reports](https://bookdown.org/yihui/rmarkdown/params-declare.html) using the zueridown template. However, two relevant conditions take place.
+You can use [parameters in R Markdown reports](https://bookdown.org/yihui/rmarkdown/params-declare.html) using the `zueridown` template. However, two relevant conditions take place.
 
 First, it is not possible to include in the YAML r calls like `r params$country`. Therefore, if your document has a title or a subtitle using a parameter, you should use the `title` and/or `subtitle` parameters in the function `cd_page_title_box` or `cd_page_title_box` accordingly, for instance:
 
@@ -108,7 +110,7 @@ cd_page_title_box(
 
 ```
 
-Second, you should use the `zueridown` output format to render the parameterized report. Consequently, after creating a zueridown template (for instance: `"report.Rmd"`) use the option `output_format` as in the following example:
+Second, you should use the `zueridown` output format to render the parameterized report. Consequently, after creating a `zueridown` template (for instance: `"report.Rmd"`) use the option `output_format` as in the following example:
 
 ```
   rmarkdown::render(
