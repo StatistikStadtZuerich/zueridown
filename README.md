@@ -1,3 +1,5 @@
+<img src='inst/example/Hexagon_zueridown_official.png' align="right" height="138.5" />
+
 # zueridown R Markdown template
 
 zueridown makes it easy to generate customized R Markdown PDF documents that follow the corporate design of Stadt Zürich.
