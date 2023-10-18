@@ -51,7 +51,7 @@ cd_page_title_photo <- function(
     system.file(
       package = "zueridown",
       "example",
-      "Jakob.jpg"
+      "Sechselaeuteplatz.jpg"
     )
   ),
   title_size = "40pt",

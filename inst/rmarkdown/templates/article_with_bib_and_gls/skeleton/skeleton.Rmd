@@ -1,6 +1,6 @@
 ---
-title           : "Report with Bibliography and glossary"
-subtitle        : "Analyse | 1/2020"
+title           : "Bericht mit Bibliografie und Glossar"
+subtitle        : "Zweiter Titel"
 author          : "cynkra GmbH"
 
 twocolumn       : false      # false (default) true
@@ -28,7 +28,7 @@ cd_knit_chunk_opts()
 ```
 
 ```{r}
-cd_footer("Statistik Stadt Zürich | Vornamenverzeichnis 2019")
+cd_footer("Statistik Stadt Zürich | Bericht")
 # cd_page_title_photo(
 #   subtitle_below = "Subtitle Below",
 #   title_size = "40pt",
@@ -89,7 +89,7 @@ cd_page_impressum(
   tel = "+41 44 412 08 00",
   email = "statistik@zuerich.ch",
   web = "stadt-zuerich.ch/Statistik",
-  date = "Mai 2021",
+  date = "Oktober 2023",
   authors = "Author 1\\\\
              Author 2\\\\
              Author 3",
@@ -107,10 +107,6 @@ cd_page_table_of_contents()
 cd_big_paragraph("Die Stadt Zürich ist in den letzten Jahrzehnten vielfältiger und internationaler geworden; derzeit leben
 in Zürich Menschen aus 170 verschiedenen Nationen. In welchen Sprachen kommunizieren diese in
 welchem Kontext miteinander?")
-```
-
-```{r}
-cd_big_paragraph("Dieser Bericht beinhaltet die im Rahmen der Bevölkerungsbefragung (BVB) 2023 von Statistik Stadt Zürich (SSZ) angefertigten Standardauswertungen zum Thema Diskriminierung")
 ```
 
 :::: {.multicols data-latex="{2}"}
@@ -137,7 +133,7 @@ Die aktuellen Daten zeigen jedoch, dass ein beträchtlicher Teil der Stadtzürch
 
 ::::
 
-\section[short title]{Erstes Kapitel, welches einen ganz ganz ganz ganz Langen Title hat}
+\section[Erstes Kapitel]{Erstes Kapitel, welches einen ganz ganz ganz ganz Langen Title hat}
 
 
 :::: {.multicols data-latex="{2}"}
@@ -147,13 +143,14 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 ::::: {.fig data-latex=""}
 ```{r, results='asis'}
-cd_caption_subcaption("Caption title", "Subcaption title", "fig:figura1")
+cd_caption_subcaption("Titel der Grafik", "Untertitel der Grafik", "fig:figura1")
 ggplot(data = iris,
        aes(x = Sepal.Length,
            y = Sepal.Width,
            color = as.factor(Species))) +
   geom_point(size = 2) +
-  ssz_theme(base_size = 12, ausrichtung = "x")
+  ssz_theme(base_size = 12,
+            grid_lines = "both")
 ```
 :::::
 
@@ -169,16 +166,16 @@ kableExtra::kable(head(iris),
                   col.names = gsub("[.]", " ", names(iris)),
                   #longtable = TRUE,
                   table.env='table',
-                  caption = "\\textbf{Caption title} \\newline Subcaption title",
+                  caption = "\\textbf{Titel der Tabelle} \\newline Untertitel der Tabelle",
                   booktabs = T) %>%
             kable_styling(font_size = 9, full_width = T, latex_options = "HOLD_position") %>%
-            row_spec(0,bold=TRUE, background="red") %>% 
+            row_spec(0, bold = TRUE) %>% 
             # If full_width is FALSE do not use the full_width_tabular()
             full_width_tabular()
 ```
 
 
-## Vornamen der Neugeborenen
+## Zweites Kapitel
 
 :::: {.multicols data-latex="{2}"}
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Figura \ref{fig:figura1} Table \ref{tab:tab1}
@@ -187,7 +184,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 ::::
 
-#  4 Kapitel, welches einen ganz ganz ganz ganz Langen Title hat {.unnumbered}
+# Drittes Kapitel, welches einen ganz ganz ganz ganz Langen Title hat {.unnumbered}
 
 :::: {.multicols data-latex="{2}"}
 Lorem ipsum dolor sit amet, consetetur \gls{BFS} iam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren \gls{Konfidenzintervall}. \gls{ABS}
@@ -196,14 +193,17 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 ::::
 
-## How to use the references?
+## Wie funktionieren Referenzen?
 
-To include your reference in any section, you can follow the common [Rmarkdown citation ](https://bookdown.org/yihui/bookdown/citations.html), for instance to cite the example above you can use `[see @daas2015big]` and it looks like: see @daas2015big.
+Um Referenzen in einem beliebigen Abschnitt einzubinden, kann der gewöhnlichen [Rmarkdown citation](https://bookdown.org/yihui/bookdown/citations.html) gefolgt werden.Um beispielsweise das obige Beispiel zu zitieren, kann `[see @daas2015big]` benützt werden, was dann so aussieht: see @daas2015big.
 
 \newpage
-# Bibliographie {-}
+
+# Bibliografie {-}
 ::: {#refs}
 :::
+
+\newpage
 
 # Glossar {.unnumbered}
 ```{r}
