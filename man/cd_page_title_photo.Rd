@@ -11,7 +11,7 @@ cd_page_title_photo(
   color_palette = default(cd_color_palette("palette1")),
   subtitle_below = "",
   title_image_path = default(NULL, system.file(package = "zueridown", "example",
-    "Jakob.jpg")),
+    "Sechselaeuteplatz.jpg")),
   title_size = "40pt",
   subtitle_size = "25pt",
   subtitle_below_size = "20pt",

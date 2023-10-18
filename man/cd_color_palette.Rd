@@ -6,8 +6,11 @@
 \usage{
 cd_color_palette(name = "palette1")
 }
+\arguments{
+\item{name}{character. Name of the color palette.}
+}
 \description{
-There are five color palettes defined.
+There are fourteen color palettes defined.
 }
 \details{
 The specification of the colors is:
