@@ -7,7 +7,7 @@
 cd_color_palette(name = "palette1")
 }
 \arguments{
-\item{name}{character. Name of the color palette.}
+\item{name}{character. Name of the color palette. Default Palette 1.}
 }
 \description{
 There are fourteen color palettes defined.
