@@ -101,6 +101,9 @@ cd_page_impressum(
 cd_page_table_of_contents(toc_depth = 2)
 ```
 
+<!-- \phantomsection is necessary to link properly to the TOC-->
+<!-- this option only applies to unnumbered sections i.e. {-} -->
+\phantomsection 
 # Zusammenfassung {-}
 
 ```{r}
@@ -184,8 +187,6 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 ::::
 
-# Drittes Kapitel, welches einen ganz ganz ganz ganz Langen Title hat {.unnumbered}
-
 :::: {.multicols data-latex="{2}"}
 Lorem ipsum dolor sit amet, consetetur \gls{BFS} iam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren \gls{Konfidenzintervall}. \gls{ABS}
 Lorem ipsum dolor sit amet, consetetur \gls{ABS} iam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren \gls{Konversionssaldo}.  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
@@ -199,13 +200,23 @@ Um Referenzen in einem beliebigen Abschnitt einzubinden, kann der gewöhnlichen 
 
 \newpage
 
+<!-- \phantomsection is necessary to link properly to the TOC-->
+<!-- this option only applies to unnumbered sections i.e. {-} -->
+\phantomsection 
 # Bibliografie {-}
 ::: {#refs}
 :::
 
 \newpage
 
+<!-- \phantomsection is necessary to link properly to the TOC-->
+<!-- this option only applies to unnumbered sections i.e. {-} -->
+\phantomsection 
 # Glossar {.unnumbered}
+<!-- To remove this section from the table of contents,
+<!-- add the pandoc option .unlisted above. -->
+<!-- If you want this section with a number, -->
+<!-- remove the .unnumbered option above -->
 ```{r}
 cd_page_glossary()
 ```
