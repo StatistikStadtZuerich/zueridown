@@ -5,7 +5,7 @@
 #' The specification of the colors is:
 #' \figure{palettes.png}
 #'
-#'@param name character. Name of the color palette.
+#'@param name character. Name of the color palette. Default Palette 1.
 #'
 #'
 #' @export
@@ -235,6 +235,6 @@ cd_color_palette <- function(name = "palette1") {
   } else if (name == "palette_contrast3") {
     color_palette_contrast3
   } else {
-    stop("palette not defined")
+    stop("color palette not defined")
   }
 }
