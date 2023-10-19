@@ -106,7 +106,7 @@ cd_page_impressum(
   space = "0cm")
 
 # Function to create the table of content
-cd_page_table_of_contents()
+cd_page_table_of_contents(toc_depth = 2)
 ```
 
 # Zusammenfassung {-}

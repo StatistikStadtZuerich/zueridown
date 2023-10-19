@@ -1,6 +1,6 @@
 Package: zueridown
 Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Version: 0.0.1.9001
 Authors@R:
     person(given = "First",
            family = "Last",
@@ -18,7 +18,8 @@ Imports:
     glue
 Suggests:
     markdown,
-    zueritheme,
+    zueritheme (>= 0.0.1),
     zuericolors,
     ggplot2,
-    gridExtra
+    gridExtra,
+    stringr
