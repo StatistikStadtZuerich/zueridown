@@ -109,6 +109,9 @@ cd_page_impressum(
 cd_page_table_of_contents(toc_depth = 2)
 ```
 
+<!-- \phantomsection is necessary to link properly to the TOC-->
+<!-- this option only applies to unnumbered sections i.e. {-} -->
+\phantomsection 
 # Zusammenfassung {-}
 
 ```{r}
