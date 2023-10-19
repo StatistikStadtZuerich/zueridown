@@ -98,7 +98,7 @@ cd_page_impressum(
   # When the "Zeichenerklärung" above is not necessary the parameter space 
   # should be set to 15cm (space = "15cm")
   space = "0cm")
-cd_page_table_of_contents()
+cd_page_table_of_contents(toc_depth = 2)
 ```
 
 # Zusammenfassung {-}
