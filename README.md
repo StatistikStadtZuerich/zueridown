@@ -148,7 +148,7 @@ kableExtra::kable(head(iris),
 ```
 ````
 
-### Issues with Hypenation or text beyond the margins
+## Issues with Hypenation or text beyond the margins
 
 If the document does not have proper hypenation in any line, or there are 
 some texts which extend beyond the margin of the page, i.e. if the document
@@ -164,6 +164,4 @@ Use the commands from the `tinytex` package to install or update the babel-germa
 Afterwards your text should contain proper hypenation, for instance:
 
 ![](inst/indiedown/res/hyphen.png)
-
-
 
