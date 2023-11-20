@@ -28,6 +28,10 @@ cd_knit_chunk_opts()
 ```
 
 ```{r}
+# use this function to change the text for the footer of pages
+# cd_footer function should always be included
+# for documents without footer text use simply cd_footer()
+
 cd_footer("Statistik Stadt Zürich | Bericht")
 # cd_page_title_photo(
 #   subtitle_below = "Subtitle Below",
@@ -107,9 +111,7 @@ cd_page_table_of_contents(toc_depth = 2)
 # Zusammenfassung {-}
 
 ```{r}
-cd_big_paragraph("Die Stadt Zürich ist in den letzten Jahrzehnten vielfältiger und internationaler geworden; derzeit leben
-in Zürich Menschen aus 170 verschiedenen Nationen. In welchen Sprachen kommunizieren diese in
-welchem Kontext miteinander?")
+cd_big_paragraph("Dieser Bericht beinhaltet die im Rahmen der Bevolkerungsbefragung (BVB) 2023 von Statistik Stadt Zürich (SSZ) angefertigten Standardauswertungen zum Thema Diskriminierung")
 ```
 
 :::: {.multicols data-latex="{2}"}
