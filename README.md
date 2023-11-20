@@ -96,7 +96,9 @@ Use the remotes package to install these packages directly from github, e.g. for
 
 Before using `zueridwon` we recommend installing and the newest versions of `zuericolors` and `zuericolors`.
 
-## Parameterized reports
+## FAQ and Troubleshooting
+
+### How to implement Parameterized reports?
 You can use [parameters in R Markdown reports](https://bookdown.org/yihui/rmarkdown/params-declare.html) using the `zueridown` template. However, two relevant conditions take place.
 
 First, it is not possible to include in the YAML r calls like `r params$country`. Therefore, if your document has a title or a subtitle using a parameter, you should use the `title` and/or `subtitle` parameters in the function `cd_page_title_box` or `cd_page_title_box` accordingly, for instance:
@@ -120,7 +122,33 @@ Second, you should use the `zueridown` output format to render the parameterized
   params = list(country = "Switzerland", Name = "name_1"))
 ```
 
-## Issues with Hypenation or text beyond the margins
+### How to implement full width tables?
+
+The option `full_width = T` in kable extra uses the tabu latex package, but this package has some problems with colors and other functionalities. To solve this 
+`zueridown` has the function `full_width_tabular` . The function changes the Latex package tabu for tabularx. To use it properly follow next steps:
+
+1. specify the chunk options: ` ```{r, out.width = "\\textwidth", results='asis', warning=FALSE}`. 
+2. Set in the code of the table `full_width = T`
+3. Add the function `full_width_tabular` at the end of the code table.
+
+**Example**
+
+````
+
+```{r tab1, out.width = "\\textwidth", results='asis', warning=FALSE}
+kableExtra::kable(head(iris),
+                  col.names = gsub("[.]", " ", names(iris)),
+                  table.env='table',
+                  caption = "\\textbf{Titel der Tabelle} \\newline Untertitel der Tabelle",
+                  booktabs = T) %>%
+            kable_styling(font_size = 9, full_width = T, latex_options = "HOLD_position") %>%
+            row_spec(0,bold=TRUE) %>%
+            row_spec(2,background="red")  %>%
+            full_width_tabular()
+```
+````
+
+### Issues with Hypenation or text beyond the margins
 
 If the document does not have proper hypenation in any line, or there are 
 some texts which extend beyond the margin of the page, i.e. if the document
@@ -128,8 +156,12 @@ looks like:
 
 ![](inst/indiedown/res/no_hyphen.png)
 
-Use the commands from the `tinytex` package to install or update the babel-german and hypehn-german Latex packages. `tinytex::tlmgr_install ("babel-german")` `tinytex::tlmgr_install ("hyphen-german")`. Afterwards your text should contain 
-proper hypenation, for instance:
+Use the commands from the `tinytex` package to install or update the babel-german and hypehn-german Latex packages:
+
+- `tinytex::tlmgr_install ("babel-german")` 
+- `tinytex::tlmgr_install ("hyphen-german")`. 
+
+Afterwards your text should contain proper hypenation, for instance:
 
 ![](inst/indiedown/res/hyphen.png)
 
