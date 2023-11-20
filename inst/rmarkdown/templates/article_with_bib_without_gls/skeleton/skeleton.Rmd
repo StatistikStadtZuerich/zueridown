@@ -28,6 +28,10 @@ cd_knit_chunk_opts()
 ```
 
 ```{r}
+# use this function to change the text for the footer of pages
+# cd_footer function should always be included
+# for documents without footer text use simply cd_footer()
+
 cd_footer("Statistik Stadt Zürich | Bericht")
 # cd_page_title_photo(
 #   subtitle_below = "Subtitle Below",
