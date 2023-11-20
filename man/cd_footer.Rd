@@ -7,10 +7,11 @@
 cd_footer(foot_text = default(""))
 }
 \arguments{
-\item{footer_text}{Character. Vector that contains the footer text in different languages.}
+\item{footer_text}{Character. Vector that contains the footer text.}
 }
 \description{
 Creates a footer for all pages.
-Odd pages on the left, even on the right.
-Page number is always in the center.
+Odd pages includes the page number on the right, even pages on the left.
+When the document has a footer text this function includes it on the left 
+for odd pages, and on the right for even pages.
 }

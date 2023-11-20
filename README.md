@@ -119,3 +119,19 @@ Second, you should use the `zueridown` output format to render the parameterized
   output_file = "Country_1_report.pdf",
   params = list(country = "Switzerland", Name = "name_1"))
 ```
+
+## Issues with Hypenation or text beyond the margins
+
+If the document does not have proper hypenation in any line, or there are 
+some texts which extend beyond the margin of the page, i.e. if the document
+looks like:
+
+![](inst/indiedown/res/no_hyphen.png)
+
+Use the commands from the `tinytex` package to install or update the babel-german and hypehn-german Latex packages. `tinytex::tlmgr_install ("babel-german")` `tinytex::tlmgr_install ("hyphen-german")`. Afterwards your text should contain 
+proper hypenation, for instance:
+
+![](inst/indiedown/res/hyphen.png)
+
+
+
