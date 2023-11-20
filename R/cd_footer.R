@@ -7,7 +7,8 @@
 #'
 #' @param footer_text Character. Vector that contains the footer text.
 #'
-#' @example path.R
+#' @examples
+#'
 #' # For documents without footer text use:
 #' cd_footer()
 #' # For documents with footer text use:

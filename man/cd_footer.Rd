@@ -15,3 +15,10 @@ Odd pages includes the page number on the right, even pages on the left.
 When the document has a footer text this function includes it on the left 
 for odd pages, and on the right for even pages.
 }
+\examples{
+
+# For documents without footer text use:
+cd_footer()
+# For documents with footer text use:
+cd_footer("footer text")
+}
