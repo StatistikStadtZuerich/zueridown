@@ -18,9 +18,9 @@ lays down the framework for customization.
 
 ### Install tinytex
 
-To create a pdf document using `zueridown` you need some Latex packages.
-To install those packages you can install `tinytex` using the following
-lines of code in R:
+To create a PDF document using `zueridown` you need some `LaTeX`
+packages. To install those packages you can install `tinytex` using the
+following lines of code in R:
 
 ```{r}
 install.packages('tinytex')
@@ -44,35 +44,38 @@ But if you still have some trouble, it is better to use:
 tinytex::reinstall_tinytex()
 ```
 
-You can find more information on <https://yihui.org/tinytex/>
+You can find more information on `tinytex` here:
+<https://yihui.org/tinytex/>
 
 ### Install zueridown
 
-#### From .tar.gz file
+#### Install from .tar.gz file
 
 To install from a local source file, store `zueridown_main.tar.gz` at an
 arbitrary location on your computer.
 
 In R Studio, in the `Packages` pane, click `Install` and select the
 option `Install from Package Archive File`. Browse to the location of
-the file and install it.
-
-Alternatively, you can download the package from
-<https://github.com/cynkra/zueridown>, by clicking `Clone or download`,
-extract it to any location, e.g., to your Desktop.
+the file and install it. Alternatively, you can download the package
+from <https://github.com/cynkra/zueridown>, by clicking
+`Clone or download`, extract it to any location, e.g., to your Desktop.
 
 Then, run:
 
 ``` r
-remotes::install_local("<path_to_location>/zueridown-master", dependencies = FALSE)
+remotes::install_local("<path_to_location>/zueridown-main", dependencies = FALSE)
 ```
 
-#### From GitLab
+#### Install from GitLab
 
 The package can also be directly installed from here with the
-appropriate git credentials. If you are already cloning repos from
-GitLab, you can simply run
-`remotes::install_git("https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/zueriverse/zueridown")`.
+appropriate git credentials. If you are already cloning repositories
+from GitLab, you can simply run:
+
+``` r
+remotes::install_git("https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/zueriverse/zueridown")
+```
+
 Otherwise you need to create a personal access token in your settings,
 and use this as a password, together with your GitLab username.
 
@@ -108,21 +111,15 @@ packageVersion("zueridown")
 ## Using other packages from the zueriverse
 
 More zueri-specific packages are available on github:
-[zueritheme](https://github.com/StatistikStadtZuerich/zueritheme)
+[`zueritheme`](https://github.com/StatistikStadtZuerich/zueritheme)
 provides a ggplot-theme that is styled according to the city's CI/CD,
-[zuericolors](https://github.com/StatistikStadtZuerich/zuericolors)
+[`zuericolors`](https://github.com/StatistikStadtZuerich/zuericolors)
 provides the CI/CD colors, and
-[zuericssstyle](https://github.com/StatistikStadtZuerich/zuericssstyle)
+[`zuericssstyle`](https://github.com/StatistikStadtZuerich/zuericssstyle)
 has css for styling other types of documents such as html.
 
-Use the remotes package to install these packages directly from github,
-e.g. for zueritheme
-`remotes::install_github("StatistikStadtZuerich/zueritheme")`. If you
-are using renv, then there is no need for remotes:
-`renv::install("StatistikStadtZuerich/zueritheme")`.
-
-Before using `zueridwon` we recommend installing the newest versions of
-`zuericolors` and `zuericolors`.
+`zueritheme` and `zuericolors` are automatically installed with
+`zueridown`.
 
 ## FAQ and Troubleshooting
 
@@ -142,7 +139,7 @@ accordingly, for instance:
 cd_page_title_box(
   title = paste0("Stadt Zürich: Auswertung", params$country, "verkehrszählstelle", params$Name),
   title_size = "40pt",
-  color_palette = cd_color_palette("palette5"),
+  color_palette = cd_color_palette("palette1"),
   )
 ```
 
@@ -161,11 +158,11 @@ as in the following example:
 
 ### How to implement full width tables?
 
-The option `full_width = T` in kable extra uses the tabu latex package,
-but this package has some problems with colors and other
+The option `full_width = T` in `kableExtra` uses the `tabu LaTeX`
+package, but this package has some problems with colors and other
 functionalities. To solve this `zueridown` has the function
-`full_width_tabular` . The function changes the Latex package tabu for
-tabularx. To use it properly follow next steps:
+`full_width_tabular` . The function changes the `LaTeX` package `tabu`
+for `tabularx`. To use it properly follow next steps:
 
 1.  specify the chunk options:
     ```` ```{r, out.width = "\\textwidth", results='asis', warning=FALSE} ````.
@@ -198,7 +195,7 @@ document looks like:
 ![](inst/indiedown/res/no_hyphen.png)
 
 Use the commands from the `tinytex` package to install or update the
-babel-german and hypehn-german Latex packages:
+`babel-german` and `hypehn-german LaTeX` packages:
 
 -   `tinytex::tlmgr_install ("babel-german")`
 -   `tinytex::tlmgr_install ("hyphen-german")`.
