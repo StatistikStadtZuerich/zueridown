@@ -1,6 +1,6 @@
-# zueridown R Markdown template
+<img src="inst/indiedown/res/Hexagon_zueridown_official.png" align="right" height="138.5"/>
 
-<img src="inst/indiedown/res/Hexagon_zueridown_official.png" align="right" width="120"/>
+# zueridown R Markdown template
 
 `zueridown` makes it easy to generate customized R Markdown PDF documents that follow the corporate design of the [city of Zurich](https://www.stadt-zuerich.ch/cd/de/index.html). It is based on the CRAN package [indiedown](https://cynkra.github.io/indiedown/), which lays down the framework for customization.
 
