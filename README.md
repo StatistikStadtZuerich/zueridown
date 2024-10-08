@@ -4,9 +4,9 @@ editor_options:
     wrap: 72
 ---
 
-<img src="inst/indiedown/res/Hexagon_zueridown_official.png" align="right" height="138.5"/>
-
 # zueridown R Markdown template
+
+<img src="inst/indiedown/res/Hexagon_zueridown_official.png" align="right" width="109" height="125"/>
 
 `zueridown` makes it easy to generate customized R Markdown PDF
 documents that follow the corporate design of the [city of
