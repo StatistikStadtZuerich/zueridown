@@ -1,13 +1,13 @@
 Package: zueridown
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.3
+Title: Zurich-Themed RMarkdown Template
+Version: 0.0.3.1
 Authors@R:
     person(given = "First",
            family = "Last",
            role = c("aut", "cre"),
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: A collection of Zurich-themed RMarkdown templates for creating reports, using the zueritheme and zuericolors packages.
 License: file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.3.1
@@ -25,3 +25,6 @@ Suggests:
     ggplot2,
     gridExtra,
     stringr
+Remotes:
+    StatistikStadtZuerich/zueritheme,
+    StatistikStadtZuerich/zuericolors
