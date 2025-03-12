@@ -1,0 +1,55 @@
+include:
+  - project: 'cmp-common/cmp-build-common'
+    ref: 'release/2.6'
+    file: 'gitlab-ci-template.yaml'
+
+variables:
+  CONTAINER_REGISTRY: $CI_REGISTRY
+  CONTAINER_REGISTRY_USERNAME: $CI_REGISTRY_USER
+  CONTAINER_REGISTRY_PASSWORD: $CI_REGISTRY_PASSWORD
+  CONTAINER_REPOSITORY: $SWID
+  CONTAINER_IMAGE_NAME: $CI_PROJECT_NAME # used for container image name
+  COMPONENT_NAME: $CI_PROJECT_NAME # used for component name (alias name) in umbrella chart
+
+# This block can savely be removed. It is to ensure the pipeline doesn't run in the templates group.
+workflow:
+  rules:
+    - if: $SWID
+
+stages:
+  - prepare
+  - package
+  - deploy
+
+determine-build-version:
+  extends: ".determine-build-version"
+  stage: prepare
+
+# See https://cmp-sdlc.stzh.ch/groups/cmp-common/-/wikis/registry/Container-Images for more information about how to build container images
+image-build:
+  extends: ".image-build"
+  stage: package
+  variables:
+    CONTEXT_PATH: $CI_PROJECT_DIR
+    DOCKERFILE: $CI_PROJECT_DIR/Dockerfile
+    IMAGE_NAME: $CONTAINER_IMAGE_NAME
+    BUILD_ARGS: "--build-arg BUILD_VERSION=$BUILD_VERSION"
+
+# See https://cmp-sdlc.stzh.ch/cmp-common/cmp-build-common#update-deploy-values for more information about this trigger
+# VAR DEPLOY_PROJECT_ID wird benötigt
+# VAR VALUES_TO_SET wird benötigt
+update-image-tag:
+  extends: ".update-deploy-values"
+  stage: deploy
+  # Overwrite CI/CD Variables as we deploy cross SWIDs
+  before_script:
+    - |
+      echo "Overwrite GIT_PIPELINE_TOKEN with SSZ_WEBSERVICES_GIT_PIPELINE_TOKEN"
+      export GIT_PIPELINE_TOKEN=${SSZ_WEBSERVICES_GIT_PIPELINE_TOKEN}
+      echo "Overwrite DEPLOY_PROJECT_ID with SSZ_WEBSERVICES_DEPLOY_PROJECT_ID"
+      export DEPLOY_PROJECT_ID=${SSZ_WEBSERVICES_DEPLOY_PROJECT_ID}
+
+  variables:
+    PRODUCT_RELEASES: "main"
+    IMAGE_TAG: "${COMPONENT_NAME}.image.tag:${IMAGE_VERSION}"
+    VALUES_TO_SET: "${IMAGE_TAG}"
