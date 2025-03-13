@@ -26,5 +26,5 @@ Suggests:
     gridExtra,
     stringr
 Remotes:
-    StatistikStadtZuerich/zueritheme,
-    StatistikStadtZuerich/zuericolors
+    github::StatistikStadtZuerich/zueritheme,
+    github::StatistikStadtZuerich/zuericolors
