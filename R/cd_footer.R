@@ -5,7 +5,7 @@
 #' When the document has a footer text this function includes it on the left
 #' for odd pages, and on the right for even pages.
 #'
-#' @param footer_text Character. Vector that contains the footer text.
+#' @param foot_text Character. Vector that contains the footer text.
 #'
 #' @examples
 #'
