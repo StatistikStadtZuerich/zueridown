@@ -1,4 +1,4 @@
-<img src="man/figures/Hexagon_zueridown_official.png" align="right" height="138.5"/>
+<img src="man/figures/Hexagon_zueridown_official.png" align="right" width="138.5" height="138.5"/>
 
 # zueridown R Markdown template
 
@@ -10,7 +10,7 @@
 
 To create a PDF document using `zueridown` you need some `LaTeX` packages. To install those packages you can install `tinytex` using the following lines of code in R:
 
-```{r}
+``` r
 install.packages('tinytex')
 tinytex::install_tinytex()
 # to uninstall TinyTeX, run tinytex::uninstall_tinytex() 
@@ -18,7 +18,7 @@ tinytex::install_tinytex()
 
 `tinytex` automatically will install all packages needed for `zueridown`. However, if you get an error due to some missing package, you can use the following helper functions:
 
-```{r}
+``` r
 library(tinytex)
 tlmgr_install('psnfss')      # install the psnfss package
 tlmgr_update()   
@@ -26,7 +26,7 @@ tlmgr_update()
 
 But if you still have some trouble, it is better to use:
 
-```{r}
+``` r
 tinytex::reinstall_tinytex()
 ```
 
