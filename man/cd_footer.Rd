@@ -7,7 +7,7 @@
 cd_footer(foot_text = default(""))
 }
 \arguments{
-\item{footer_text}{Character. Vector that contains the footer text.}
+\item{foot_text}{Character. Vector that contains the footer text.}
 }
 \description{
 Creates a footer for all pages.
