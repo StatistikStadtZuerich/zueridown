@@ -1,4 +1,4 @@
-<img src="inst/indiedown/res/Hexagon_zueridown_official.png" align="right" height="138.5"/>
+<img src="man/figures/Hexagon_zueridown_official.png" align="right" height="138.5"/>
 
 # zueridown R Markdown template
 
@@ -60,7 +60,7 @@ Otherwise you need to create a personal access token in your settings, and use t
 
 After installation, a new R Markdown template is available in R Studio. To open, use `File`, `New File`, `R Markdown`.
 
-![](inst/indiedown/res/file_new_file.png)
+![](man/figures/file_new_file.png)
 
 Click `From Template` and select one of the templates:
 
@@ -69,11 +69,11 @@ Click `From Template` and select one of the templates:
 -   `zueridown document with bibliography and without glossary`
 -   `zueridown document without glossary and bibliography`
 
-![](inst/indiedown/res/zueridown_tplt.png)
+![](man/figures/zueridown_tplt.png)
 
 After saving the file on your computer, you can use the `Knit` button to produce a basic PDF document based on this template.
 
-![](inst/indiedown/res/knit.png)
+![](man/figures/knit.png)
 
 ## Version
 
@@ -144,7 +144,7 @@ kableExtra::kable(head(iris),
 
 If the document does not have proper hypenation in any line, or there are some texts which extend beyond the margin of the page, i.e. if the document looks like:
 
-![](inst/indiedown/res/no_hyphen.png)
+![](man/figures/no_hyphen.png)
 
 Use the commands from the `tinytex` package to install or update the `babel-german` and `hypehn-german LaTeX` packages:
 
@@ -153,4 +153,4 @@ Use the commands from the `tinytex` package to install or update the `babel-germ
 
 Afterwards your text should contain proper hyphenation, for instance:
 
-![](inst/indiedown/res/hyphen.png)
+![](man/figures/hyphen.png)
