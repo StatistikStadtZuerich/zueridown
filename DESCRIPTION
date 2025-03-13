@@ -1,23 +1,25 @@
 Package: zueridown
 Title: Zurich-Themed RMarkdown Template
 Version: 0.0.3.1
-Authors@R:
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+Authors@R: c(
+    person("Alessandro", "Feller", role = "cre", email = "alessandro.feller@zuerich.ch"),
+    person("Angelica", "Becerra", role = "aut"), 
+    person("Sara", "Hänzi", role = "ctb", email = "sara.haenzi@zuerich.ch"),
+    person("Statistik Stadt Zürich", role = "fnd", email = "statistik@zuerich.ch")
+    )
 Description: A collection of Zurich-themed RMarkdown templates for creating reports, using the zueritheme and zuericolors packages.
 License: file LICENSE
 Encoding: UTF-8
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Depends: R (>= 3.5.0)
 Imports:
     knitr,
     rmarkdown,
     glue,
     zueritheme,
-    zuericolors
+    zuericolors,
+    yaml,
+    withr
 Suggests:
     markdown,
     zueritheme (>= 0.0.1),
