@@ -151,6 +151,6 @@ Use the commands from the `tinytex` package to install or update the `babel-germ
 -   `tinytex::tlmgr_install ("babel-german")`
 -   `tinytex::tlmgr_install ("hyphen-german")`.
 
-Afterwards your text should contain proper hypenation, for instance:
+Afterwards your text should contain proper hyphenation, for instance:
 
 ![](inst/indiedown/res/hyphen.png)
