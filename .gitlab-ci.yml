@@ -25,6 +25,13 @@ stages:
 r-devtools-check:
   extends:
     - .r-devtools-check
+    
+r-pkgdown-build-no-commit:
+  extends: ".common-settings-check-and-build"
+  stage: test
+  script:
+    - Rscript -e "renv::status()"
+    - Rscript -e "pkgdown::build_site()"
 
 # rest of the pipeline: to deploy first as container, later on CMP runtime with nginx as static website for pkgdown site
 determine-build-version:
