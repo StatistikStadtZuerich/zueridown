@@ -1,66 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cd_big_paragraph.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cd_caption_subcaption.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cd_color_palette.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cd_footer.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cd_knit_chunk_opts.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cd_last_page.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cd_page_glossary.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cd_page_impressum.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cd_page_list_of_tables.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cd_page_table_of_contents.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cd_page_table_of_figures.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cd_page_title_box.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cd_page_title_photo.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/indiedown_glue.html</loc>
-  </url>
-  <url>
-    <loc>/reference/indiedown_path.html</loc>
-  </url>
-  <url>
-    <loc>/reference/indiedown_path_tex.html</loc>
-  </url>
-  <url>
-    <loc>/reference/zueridown.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/404.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/authors.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/index.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/LICENSE-text.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/news/index.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/cd_big_paragraph.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/cd_caption_subcaption.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/cd_color_palette.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/cd_footer.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/cd_knit_chunk_opts.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/cd_last_page.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/cd_page_glossary.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/cd_page_impressum.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/cd_page_list_of_tables.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/cd_page_table_of_contents.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/cd_page_table_of_figures.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/cd_page_title_box.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/cd_page_title_photo.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/index.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/indiedown_glue.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/indiedown_path.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/indiedown_path_tex.html</loc></url>
+<url><loc>https://ssz-webservices-prod.cmp.szh.loc/zueridown/reference/zueridown.html</loc></url>
 </urlset>
+
