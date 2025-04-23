@@ -31,9 +31,13 @@ r-pkgdown-build-no-commit:
   extends: ".r-pkgdown-build-no-commit"
 
 # rest of the pipeline: to deploy first as container, later on CMP runtime with nginx as static website for pkgdown site
+# only do this when merging on main
 determine-build-version:
   extends: ".determine-build-version"
   stage: prepare
+  rules:
+    # ausgeführt wenn Push/Merge auf Main branch
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 # See https://cmp-sdlc.stzh.ch/groups/cmp-common/-/wikis/registry/Container-Images for more information about how to build container images
 image-build:
@@ -44,6 +48,9 @@ image-build:
     DOCKERFILE: $CI_PROJECT_DIR/Dockerfile
     IMAGE_NAME: $CONTAINER_IMAGE_NAME
     BUILD_ARGS: "--build-arg BUILD_VERSION=$BUILD_VERSION"
+  rules:
+    # ausgeführt wenn Push/Merge auf Main branch
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 # See https://cmp-sdlc.stzh.ch/cmp-common/cmp-build-common#update-deploy-values for more information about this trigger
 # VAR DEPLOY_PROJECT_ID wird benötigt
@@ -63,3 +70,6 @@ update-image-tag:
     PRODUCT_RELEASES: "main"
     IMAGE_TAG: "${COMPONENT_NAME}.image.tag:${IMAGE_VERSION}"
     VALUES_TO_SET: "${IMAGE_TAG}"
+  rules:
+    # ausgeführt wenn Push/Merge auf Main branch
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
