@@ -29,6 +29,7 @@ r-devtools-check:
 r-pkgdown-build-no-commit:
   extends: ".common-settings-check-and-build"
   stage: test
+  needs: ["r-devtools-check"]
   script:
     - Rscript -e "renv::status()"
     - Rscript -e "pkgdown::build_site()"
