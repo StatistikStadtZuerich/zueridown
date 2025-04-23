@@ -4,7 +4,7 @@ include:
     file: 'gitlab-ci-template.yaml'
   # use template for gitlab pipeline to check and build
   - project: "OE-7035/ssz-da/templates/pipeline-templates"
-    ref: "main"
+    ref: "feature-build-pkgdown"
     file: "r-check-and-build-packages.yml"
 
 variables:
@@ -17,6 +17,7 @@ variables:
 
 stages:
   - test
+  - build
   - prepare
   - package
   - deploy
@@ -27,12 +28,7 @@ r-devtools-check:
     - .r-devtools-check
     
 r-pkgdown-build-no-commit:
-  extends: ".common-settings-check-and-build"
-  stage: test
-  needs: ["r-devtools-check"]
-  script:
-    - Rscript -e "renv::status()"
-    - Rscript -e "pkgdown::build_site()"
+  extends: ".r-pkgdown-build-no-commit"
 
 # rest of the pipeline: to deploy first as container, later on CMP runtime with nginx as static website for pkgdown site
 determine-build-version:
