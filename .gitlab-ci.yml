@@ -2,6 +2,10 @@ include:
   - project: 'cmp-common/cmp-build-common'
     ref: 'release/2.6'
     file: 'gitlab-ci-template.yaml'
+  # use template for gitlab pipeline to check and build
+  - project: "OE-7035/ssz-da/templates/pipeline-templates"
+    ref: "main"
+    file: "r-check-and-build-packages.yml"
 
 variables:
   CONTAINER_REGISTRY: $CI_REGISTRY
@@ -11,16 +15,18 @@ variables:
   CONTAINER_IMAGE_NAME: $CI_PROJECT_NAME # used for container image name
   COMPONENT_NAME: $CI_PROJECT_NAME # used for component name (alias name) in umbrella chart
 
-# This block can savely be removed. It is to ensure the pipeline doesn't run in the templates group.
-workflow:
-  rules:
-    - if: $SWID
-
 stages:
+  - test
   - prepare
   - package
   - deploy
+  
+# run check (R CMD check of R package)
+r-devtools-check:
+  extends:
+    - .r-devtools-check
 
+# rest of the pipeline: to deploy first as container, later on CMP runtime with nginx as static website for pkgdown site
 determine-build-version:
   extends: ".determine-build-version"
   stage: prepare
