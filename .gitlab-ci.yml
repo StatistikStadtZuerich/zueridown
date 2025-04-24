@@ -42,9 +42,9 @@ remove-stuff-orphan-push:
     - Rscript -e "renv::status()"
     - Rscript -e "pkgdown::build_site()"
     - ls
-    - rm _pkgdown.yml .gitlab-ci.yml .Rbuildignore .Rprofile Dockerfile LICENSE NAMESPACE README.md renv.lock zueridown.Rproj
+    - rm _pkgdown.yml .gitlab-ci.yml .Rbuildignore .Rprofile Dockerfile LICENSE NAMESPACE README.md zueridown.Rproj
     - cp dev/dummy_README.md README.md
-    - rm -r -f -v dev inst R renv
+    - rm -r -f -v dev inst R 
     - ls -R
     - git add .
     - git commit -m "remove everything including fonts, keep docs, man, and readme"
