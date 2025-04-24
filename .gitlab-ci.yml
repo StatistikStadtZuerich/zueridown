@@ -32,17 +32,17 @@ remove-stuff-orphan-push:
     - .common-settings-publish-to-github
     - .git-setup
     - .orphan-commit-push
-  stage: build
+  stage: test
   script:
     - !reference [.git-setup, script]
     - git checkout feature-renv-pkgdown
     - ls
-    - rm _pkgdown.yml .gitlab-ci.yml .Rbuildignore .Rprofile DESCRIPTION Dockerfile LICENSE NAMESPACE NEWS.md README.md renv.lock zueridown.Rproj
+    - rm _pkgdown.yml .gitlab-ci.yml .Rbuildignore .Rprofile Dockerfile LICENSE NAMESPACE README.md renv.lock zueridown.Rproj
     - cp dev/dummy_README.md README.md
-    - rm -r -f -v dev inst man R renv
+    - rm -r -f -v dev inst R renv
     - ls -R
     - git add .
-    - git commit -m "remove everything including fonts, keep docs and readme"
+    - git commit -m "remove everything including fonts, keep docs, man, and readme"
     - !reference [.orphan-commit-push, script]
   rules:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
