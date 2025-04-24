@@ -30,7 +30,7 @@ r-pkgdown-build-no-commit:
 remove-stuff-orphan-push:
   stage: build
   script:
-    - rm _pkgdown.yml .gitlab-ci.yml .Rbuildignore .Rprofile DESCRIPTION Dockerfile LICENSE NAMESPACE NEWS.md REAME.md renv.lock zueridown.Rproj
+    - rm _pkgdown.yml .gitlab-ci.yml .Rbuildignore .Rprofile DESCRIPTION Dockerfile LICENSE NAMESPACE NEWS.md README.md renv.lock zueridown.Rproj
     - rm R/* man/*
     - rm -r -f -v inst
     - rmdir R man 
