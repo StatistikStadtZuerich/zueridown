@@ -1,7 +1,7 @@
 include:
   # use template for gitlab pipeline to check and build
   - project: "OE-7035/ssz-da/templates/pipeline-templates"
-    ref: "feature-build-pkgdown"
+    ref: "main"
     file: "r-check-and-build-packages.yml"
   - project: "OE-7035/ssz-da/templates/pipeline-templates"
     ref: "main"
