@@ -35,6 +35,7 @@ remove-stuff-orphan-push:
   stage: build
   script:
     - !reference [.git-setup, script]
+    - ls
     - rm _pkgdown.yml .gitlab-ci.yml .Rbuildignore .Rprofile DESCRIPTION Dockerfile LICENSE NAMESPACE NEWS.md README.md renv.lock zueridown.Rproj
     - cp dev/dummy_README.md README.md
     - rm -r -f -v dev inst man R renv
