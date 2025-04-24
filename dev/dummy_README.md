@@ -7,4 +7,4 @@
 
 `zueridown` makes it easy to generate customized R Markdown PDF documents that follow the corporate design of the [city of Zurich](https://www.stadt-zuerich.ch/cd/de/index.html). It is based on the CRAN package [indiedown](https://cynkra.github.io/indiedown/), which lays down the framework for customization.
 
-This is a dummy repository to hold the documentation, the actual package is hosted privately due to the proprietary fonts. If you need access to install and use the package please contact [statistik\@zuerich.ch](mailto:statistik@zuerich.ch){.email}.
+This is a dummy repository to hold the documentation, the actual package is hosted privately due to the proprietary fonts. If you need access to install and use the package please contact [statistik\@zuerich.ch](mailto:statistik@zuerich.ch).
