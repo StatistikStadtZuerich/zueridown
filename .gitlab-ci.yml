@@ -26,13 +26,21 @@ r-pkgdown-build-no-commit:
 # rest of the pipeline: remove almost everything except dummy readme and pkgdown site
 # then push to github to publish pkgdown site as github pages
 remove-stuff-orphan-push:
+  image: $CI_REGISTRY/docker-hub-proxy/rocker/tidyverse:4.3.2
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    #- if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   extends:
     - .common-settings-publish-to-github
+    - .common-settings-check-and-build
     - .git-setup
     - .orphan-commit-push
   stage: deploy-prod
   script:
     - !reference [.git-setup, script]
+    - git checkout feature-renv-pkgdown
+    - Rscript -e "renv::status()"
+    - Rscript -e "pkgdown::build_site()"
     - ls
     - rm _pkgdown.yml .gitlab-ci.yml .Rbuildignore .Rprofile Dockerfile LICENSE NAMESPACE README.md renv.lock zueridown.Rproj
     - cp dev/dummy_README.md README.md
