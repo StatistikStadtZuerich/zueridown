@@ -31,10 +31,11 @@ remove-stuff-orphan-push:
   stage: build
   script:
     - rm _pkgdown.yml .gitlab-ci.yml .Rbuildignore .Rprofile DESCRIPTION Dockerfile LICENSE NAMESPACE NEWS.md README.md renv.lock zueridown.Rproj
-    - rm R/* man/*
+    - rm R/* 
+    - rm -f -f -v man
     - rm -r -f -v inst
-    - rmdir R man 
-    - rmdir inst
+    - rmdir R  
+    - rmdir inst man
     - cp dev/dummy_README.md README.md
     - ls -R
     
