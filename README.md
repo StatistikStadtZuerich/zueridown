@@ -3,7 +3,7 @@
 [![GitLab Pipeline](https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/libraries/zueriverse/zueridown/badges/main/pipeline.svg?key_text=GitlabPipeline&key_width=100)](https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/libraries/zueriverse/zueridown/badges/main/pipeline.svg?key_text=GitLabPipeline&key_width=100)
 <!-- badges: end -->
 
-# zueridown R Markdown template <img src="man/figures/Hexagon_zueridown_official.png" align="right" width="138.5" height="138.5"/>
+# zueridown R Markdown template <img src="man/figures/Hexagon_zueridown_official.png" alt="Hexagon logo for zueridown R package" align="right" width="138.5" height="138.5"/>
 
 `zueridown` makes it easy to generate customized R Markdown PDF documents that follow the corporate design of the [city of Zurich](https://www.stadt-zuerich.ch/cd/de/index.html). It is based on the CRAN package [indiedown](https://cynkra.github.io/indiedown/), which lays down the framework for customization.
 
@@ -63,7 +63,7 @@ Otherwise you need to create a personal access token in your settings, and use t
 
 After installation, a new R Markdown template is available in R Studio. To open, use `File`, `New File`, `R Markdown`.
 
-![](man/figures/file_new_file.png)
+![Screenshot showing how to open new markdown file with File, New File, R Markdown](man/figures/file_new_file.png)
 
 Click `From Template` and select one of the templates:
 
@@ -72,11 +72,11 @@ Click `From Template` and select one of the templates:
 -   `zueridown document with bibliography and without glossary`
 -   `zueridown document without glossary and bibliography`
 
-![](man/figures/zueridown_tplt.png)
+![Screenshot showing dialoge to select form template and then choose a zueridown template](man/figures/zueridown_tplt.png)
 
 After saving the file on your computer, you can use the `Knit` button to produce a basic PDF document based on this template.
 
-![](man/figures/knit.png)
+![Screenshot showing the RStudio knit button to create the pdf](man/figures/knit.png)
 
 ## Version
 
@@ -147,7 +147,7 @@ kableExtra::kable(head(iris),
 
 If the document does not have proper hyphenation in any line, or there are some texts which extend beyond the margin of the page, i.e. if the document looks like:
 
-![](man/figures/no_hyphen.png)
+![Screenshot of pdf with text going beyond the margins](man/figures/no_hyphen.png)
 
 Use the commands from the `tinytex` package to install or update the `babel-german` and `hypehn-german LaTeX` packages:
 
@@ -156,7 +156,7 @@ Use the commands from the `tinytex` package to install or update the `babel-germ
 
 Afterwards your text should contain proper hyphenation, for instance:
 
-![](man/figures/hyphen.png)
+![Screenshot of pdf with proper hyphenation](man/figures/hyphen.png)
 
 ## Getting help
 

@@ -47,7 +47,7 @@
 <div class="row">
   <main id="main" class="col-md-9">
 <div class="section level1">
-<div class="page-header"><h1 id="zueridown-r-markdown-template-">zueridown R Markdown template <img src="reference/figures/Hexagon_zueridown_official.png" align="right" width="138.5" height="138.5"><a class="anchor" aria-label="anchor" href="#zueridown-r-markdown-template-"></a>
+<div class="page-header"><h1 id="zueridown-r-markdown-template-">zueridown R Markdown template <img src="reference/figures/Hexagon_zueridown_official.png" alt="Hexagon logo for zueridown R package" align="right" width="138.5" height="138.5"><a class="anchor" aria-label="anchor" href="#zueridown-r-markdown-template-"></a>
 </h1></div>
 <p><code>zueridown</code> makes it easy to generate customized R Markdown PDF documents that follow the corporate design of the <a href="https://www.stadt-zuerich.ch/cd/de/index.html" class="external-link">city of Zurich</a>. It is based on the CRAN package <a href="https://cynkra.github.io/indiedown/" class="external-link">indiedown</a>, which lays down the framework for customization.</p>
 <div class="section level2">
@@ -97,7 +97,9 @@
 <h2 id="basic-template">Basic Template<a class="anchor" aria-label="anchor" href="#basic-template"></a>
 </h2>
 <p>After installation, a new R Markdown template is available in R Studio. To open, use <code>File</code>, <code>New File</code>, <code>R Markdown</code>.</p>
-<p><img src="reference/figures/file_new_file.png"></p>
+<div class="float">
+<img src="reference/figures/file_new_file.png" alt="Screenshot showing how to open new markdown file with File, New File, R Markdown"><div class="figcaption">Screenshot showing how to open new markdown file with File, New File, R Markdown</div>
+</div>
 <p>Click <code>From Template</code> and select one of the templates:</p>
 <ul>
 <li>
@@ -107,9 +109,13 @@
 <li><code>zueridown document with bibliography and without glossary</code></li>
 <li><code>zueridown document without glossary and bibliography</code></li>
 </ul>
-<p><img src="reference/figures/zueridown_tplt.png"></p>
+<div class="float">
+<img src="reference/figures/zueridown_tplt.png" alt="Screenshot showing dialoge to select form template and then choose a zueridown template"><div class="figcaption">Screenshot showing dialoge to select form template and then choose a zueridown template</div>
+</div>
 <p>After saving the file on your computer, you can use the <code>Knit</code> button to produce a basic PDF document based on this template.</p>
-<p><img src="reference/figures/knit.png"></p>
+<div class="float">
+<img src="reference/figures/knit.png" alt="Screenshot showing the RStudio knit button to create the pdf"><div class="figcaption">Screenshot showing the RStudio knit button to create the pdf</div>
+</div>
 </div>
 <div class="section level2">
 <h2 id="version">Version<a class="anchor" aria-label="anchor" href="#version"></a>
@@ -170,10 +176,12 @@ kableExtra::kable(head(iris),
 </div>
 </div>
 <div class="section level2">
-<h2 id="issues-with-hypenation-or-text-beyond-the-margins">Issues with Hypenation or text beyond the margins<a class="anchor" aria-label="anchor" href="#issues-with-hypenation-or-text-beyond-the-margins"></a>
+<h2 id="issues-with-hyphenation-or-text-beyond-the-margins">Issues with Hyphenation or text beyond the margins<a class="anchor" aria-label="anchor" href="#issues-with-hyphenation-or-text-beyond-the-margins"></a>
 </h2>
-<p>If the document does not have proper hypenation in any line, or there are some texts which extend beyond the margin of the page, i.e. if the document looks like:</p>
-<p><img src="reference/figures/no_hyphen.png"></p>
+<p>If the document does not have proper hyphenation in any line, or there are some texts which extend beyond the margin of the page, i.e. if the document looks like:</p>
+<div class="float">
+<img src="reference/figures/no_hyphen.png" alt="Screenshot of pdf with text going beyond the margins"><div class="figcaption">Screenshot of pdf with text going beyond the margins</div>
+</div>
 <p>Use the commands from the <code>tinytex</code> package to install or update the <code>babel-german</code> and <code>hypehn-german LaTeX</code> packages:</p>
 <ul>
 <li><code>tinytex::tlmgr_install ("babel-german")</code></li>
@@ -181,7 +189,14 @@ kableExtra::kable(head(iris),
 <code>tinytex::tlmgr_install ("hyphen-german")</code>.</li>
 </ul>
 <p>Afterwards your text should contain proper hyphenation, for instance:</p>
-<p><img src="reference/figures/hyphen.png"></p>
+<div class="float">
+<img src="reference/figures/hyphen.png" alt="Screenshot of pdf with proper hyphenation"><div class="figcaption">Screenshot of pdf with proper hyphenation</div>
+</div>
+</div>
+<div class="section level2">
+<h2 id="getting-help">Getting help<a class="anchor" aria-label="anchor" href="#getting-help"></a>
+</h2>
+<p>If you encounter a bug, please open an issue or contact <a href="mailto:statistik@zuerich.ch" class="email">statistik@zuerich.ch</a>.</p>
 </div>
 </div>
 
