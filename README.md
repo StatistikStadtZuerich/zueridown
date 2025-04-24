@@ -143,9 +143,9 @@ kableExtra::kable(head(iris),
 ```
 ````
 
-## Issues with Hypenation or text beyond the margins
+## Issues with Hyphenation or text beyond the margins
 
-If the document does not have proper hypenation in any line, or there are some texts which extend beyond the margin of the page, i.e. if the document looks like:
+If the document does not have proper hyphenation in any line, or there are some texts which extend beyond the margin of the page, i.e. if the document looks like:
 
 ![](man/figures/no_hyphen.png)
 
@@ -157,3 +157,7 @@ Use the commands from the `tinytex` package to install or update the `babel-germ
 Afterwards your text should contain proper hyphenation, for instance:
 
 ![](man/figures/hyphen.png)
+
+## Getting help
+
+If you encounter a bug, please open an issue or contact [statistik\@zuerich.ch](mailto:statistik@zuerich.ch){.email}.
