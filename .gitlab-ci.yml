@@ -32,7 +32,7 @@ remove-stuff-orphan-push:
   script:
     - rm _pkgdown.yml .gitlab-ci.yml .Rbuildignore .Rprofile DESCRIPTION Dockerfile LICENSE NAMESPACE NEWS.md README.md renv.lock zueridown.Rproj
     - rm R/* 
-    - rm -f -f -v man
+    - rm -r -f -v man
     - rm -r -f -v inst
     - rmdir R  
     - rmdir inst man
