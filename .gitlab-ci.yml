@@ -30,7 +30,7 @@ r-pkgdown-build-no-commit:
 remove-stuff-orphan-push:
   extends:
     - .common-settings-publish-to-github
-    - .git_setup
+    - .git-setup
     - .orphan-commit-push
   stage: build
   script:
