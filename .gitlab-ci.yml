@@ -28,10 +28,22 @@ r-pkgdown-build-no-commit:
 # then push to github to publish pkgdown site as github pages
 
 remove-stuff-orphan-push:
+  extends:
+    - .common-settings-publish-to-github
+    - .git_setup
+    - .orphan-commit-push
   stage: build
   script:
+    - !reference [.git-setup, script]
     - rm _pkgdown.yml .gitlab-ci.yml .Rbuildignore .Rprofile DESCRIPTION Dockerfile LICENSE NAMESPACE NEWS.md README.md renv.lock zueridown.Rproj
-    - rm -r -f -v inst man R
     - cp dev/dummy_README.md README.md
+    - rm -r -f -v dev inst man R renv
     - ls -R
+    - git add .
+    - git commit -m "remove everything including fonts, keep docs and readme"
+    - !reference [.orphan-commit-push, script]
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+
+    
     
