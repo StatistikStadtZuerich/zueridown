@@ -23,13 +23,12 @@ r-devtools-check:
 r-pkgdown-build-no-commit:
   extends: ".r-pkgdown-build-no-commit"
 
-# rest of the pipeline: remove almost everything except dummy readme and pkgdown site
-# then push to github to publish pkgdown site as github pages
-remove-stuff-orphan-push:
+# rest of the pipeline: build pkgdown site, remove almost everything except dummy readme and pkgdown site
+# then commit and push to github to publish pkgdown site as github pages
+build-remove-orphan-push:
   image: $CI_REGISTRY/docker-hub-proxy/rocker/tidyverse:4.3.2
   rules:
-    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
-    #- if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   extends:
     - .common-settings-publish-to-github
     - .common-settings-check-and-build
@@ -38,7 +37,6 @@ remove-stuff-orphan-push:
   stage: deploy-prod
   script:
     - !reference [.git-setup, script]
-    - git checkout feature-renv-pkgdown
     - Rscript -e "renv::status()"
     - Rscript -e "pkgdown::build_site()"
     - ls
