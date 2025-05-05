@@ -1,6 +1,9 @@
-<img src="inst/indiedown/res/Hexagon_zueridown_official.png" align="right" height="138.5"/>
+<!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/zueridown)](https://CRAN.R-project.org/package=zueridown)
+[![GitLab Pipeline](https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/libraries/zueriverse/zueridown/badges/main/pipeline.svg?key_text=GitlabPipeline&key_width=100)](https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/libraries/zueriverse/zueridown/badges/main/pipeline.svg?key_text=GitLabPipeline&key_width=100)
+<!-- badges: end -->
 
-# zueridown R Markdown template
+# zueridown R Markdown template <img src="man/figures/Hexagon_zueridown_official.png" alt="Hexagon logo for zueridown R package" align="right" width="138.5" height="138.5"/>
 
 `zueridown` makes it easy to generate customized R Markdown PDF documents that follow the corporate design of the [city of Zurich](https://www.stadt-zuerich.ch/cd/de/index.html). It is based on the CRAN package [indiedown](https://cynkra.github.io/indiedown/), which lays down the framework for customization.
 
@@ -10,7 +13,7 @@
 
 To create a PDF document using `zueridown` you need some `LaTeX` packages. To install those packages you can install `tinytex` using the following lines of code in R:
 
-```{r}
+``` r
 install.packages('tinytex')
 tinytex::install_tinytex()
 # to uninstall TinyTeX, run tinytex::uninstall_tinytex() 
@@ -18,7 +21,7 @@ tinytex::install_tinytex()
 
 `tinytex` automatically will install all packages needed for `zueridown`. However, if you get an error due to some missing package, you can use the following helper functions:
 
-```{r}
+``` r
 library(tinytex)
 tlmgr_install('psnfss')      # install the psnfss package
 tlmgr_update()   
@@ -26,7 +29,7 @@ tlmgr_update()
 
 But if you still have some trouble, it is better to use:
 
-```{r}
+``` r
 tinytex::reinstall_tinytex()
 ```
 
@@ -60,7 +63,7 @@ Otherwise you need to create a personal access token in your settings, and use t
 
 After installation, a new R Markdown template is available in R Studio. To open, use `File`, `New File`, `R Markdown`.
 
-![](inst/indiedown/res/file_new_file.png)
+![Screenshot showing how to open new markdown file with File, New File, R Markdown](man/figures/file_new_file.png)
 
 Click `From Template` and select one of the templates:
 
@@ -69,11 +72,11 @@ Click `From Template` and select one of the templates:
 -   `zueridown document with bibliography and without glossary`
 -   `zueridown document without glossary and bibliography`
 
-![](inst/indiedown/res/zueridown_tplt.png)
+![Screenshot showing dialoge to select form template and then choose a zueridown template](man/figures/zueridown_tplt.png)
 
 After saving the file on your computer, you can use the `Knit` button to produce a basic PDF document based on this template.
 
-![](inst/indiedown/res/knit.png)
+![Screenshot showing the RStudio knit button to create the pdf](man/figures/knit.png)
 
 ## Version
 
@@ -140,17 +143,21 @@ kableExtra::kable(head(iris),
 ```
 ````
 
-## Issues with Hypenation or text beyond the margins
+## Issues with Hyphenation or text beyond the margins
 
-If the document does not have proper hypenation in any line, or there are some texts which extend beyond the margin of the page, i.e. if the document looks like:
+If the document does not have proper hyphenation in any line, or there are some texts which extend beyond the margin of the page, i.e. if the document looks like:
 
-![](inst/indiedown/res/no_hyphen.png)
+![Screenshot of pdf with text going beyond the margins](man/figures/no_hyphen.png)
 
 Use the commands from the `tinytex` package to install or update the `babel-german` and `hypehn-german LaTeX` packages:
 
 -   `tinytex::tlmgr_install ("babel-german")`
 -   `tinytex::tlmgr_install ("hyphen-german")`.
 
-Afterwards your text should contain proper hypenation, for instance:
+Afterwards your text should contain proper hyphenation, for instance:
 
-![](inst/indiedown/res/hyphen.png)
+![Screenshot of pdf with proper hyphenation](man/figures/hyphen.png)
+
+## Getting help
+
+If you encounter a bug, please open an issue or contact [statistik\@zuerich.ch](mailto:statistik@zuerich.ch){.email}.

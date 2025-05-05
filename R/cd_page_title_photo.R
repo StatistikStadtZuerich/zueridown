@@ -27,7 +27,7 @@
 #' the picture included in the package.
 #' @param logo_path Character. Character. The complete path of the logo for the
 #' cover page. Default is the logo included in the package.
-#' @examples
+#' @examples \dontrun{
 #' # using title defined in the yml and default style values
 #' cd_page_title_box()
 #' # using title and subtitle with parameters defined in the yml,
@@ -37,7 +37,7 @@
 #'   title = paste0("Title", params$a),
 #'   subtitle = paste0("Subtitle", params$b)
 #'   )
-#'
+#'  }
 #' @export
 #'
 cd_page_title_photo <- function(

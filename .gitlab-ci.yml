@@ -1,55 +1,50 @@
 include:
-  - project: 'cmp-common/cmp-build-common'
-    ref: 'release/2.6'
-    file: 'gitlab-ci-template.yaml'
-
-variables:
-  CONTAINER_REGISTRY: $CI_REGISTRY
-  CONTAINER_REGISTRY_USERNAME: $CI_REGISTRY_USER
-  CONTAINER_REGISTRY_PASSWORD: $CI_REGISTRY_PASSWORD
-  CONTAINER_REPOSITORY: $SWID
-  CONTAINER_IMAGE_NAME: $CI_PROJECT_NAME # used for container image name
-  COMPONENT_NAME: $CI_PROJECT_NAME # used for component name (alias name) in umbrella chart
-
-# This block can savely be removed. It is to ensure the pipeline doesn't run in the templates group.
-workflow:
-  rules:
-    - if: $SWID
+  # use template for gitlab pipeline to check and build
+  - project: "OE-7035/ssz-da/templates/pipeline-templates"
+    ref: "main"
+    file: "r-check-and-build-packages.yml"
+  - project: "OE-7035/ssz-da/templates/pipeline-templates"
+    ref: "main"
+    file: "publish-to-github-components.yml"
+  - project: "OE-7035/ssz-da/templates/pipeline-templates"
+    ref: "main"
+    file: "publish-to-github.yml"
 
 stages:
-  - prepare
-  - package
-  - deploy
+  - test
+  - build
+  - deploy-prod
+  
+# run check (R CMD check of R package)
+r-devtools-check:
+  extends:
+    - .r-devtools-check
+    
+r-pkgdown-build-no-commit:
+  extends: ".r-pkgdown-build-no-commit"
 
-determine-build-version:
-  extends: ".determine-build-version"
-  stage: prepare
-
-# See https://cmp-sdlc.stzh.ch/groups/cmp-common/-/wikis/registry/Container-Images for more information about how to build container images
-image-build:
-  extends: ".image-build"
-  stage: package
-  variables:
-    CONTEXT_PATH: $CI_PROJECT_DIR
-    DOCKERFILE: $CI_PROJECT_DIR/Dockerfile
-    IMAGE_NAME: $CONTAINER_IMAGE_NAME
-    BUILD_ARGS: "--build-arg BUILD_VERSION=$BUILD_VERSION"
-
-# See https://cmp-sdlc.stzh.ch/cmp-common/cmp-build-common#update-deploy-values for more information about this trigger
-# VAR DEPLOY_PROJECT_ID wird benötigt
-# VAR VALUES_TO_SET wird benötigt
-update-image-tag:
-  extends: ".update-deploy-values"
-  stage: deploy
-  # Overwrite CI/CD Variables as we deploy cross SWIDs
-  before_script:
-    - |
-      echo "Overwrite GIT_PIPELINE_TOKEN with SSZ_WEBSERVICES_GIT_PIPELINE_TOKEN"
-      export GIT_PIPELINE_TOKEN=${SSZ_WEBSERVICES_GIT_PIPELINE_TOKEN}
-      echo "Overwrite DEPLOY_PROJECT_ID with SSZ_WEBSERVICES_DEPLOY_PROJECT_ID"
-      export DEPLOY_PROJECT_ID=${SSZ_WEBSERVICES_DEPLOY_PROJECT_ID}
-
-  variables:
-    PRODUCT_RELEASES: "main"
-    IMAGE_TAG: "${COMPONENT_NAME}.image.tag:${IMAGE_VERSION}"
-    VALUES_TO_SET: "${IMAGE_TAG}"
+# rest of the pipeline: build pkgdown site, remove almost everything except dummy readme and pkgdown site
+# then commit and push to github to publish pkgdown site as github pages
+build-remove-orphan-push:
+  image: $CI_REGISTRY/docker-hub-proxy/rocker/tidyverse:4.3.2
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  extends:
+    - .common-settings-publish-to-github
+    - .common-settings-check-and-build
+    - .git-setup
+    - .orphan-commit-push
+  stage: deploy-prod
+  script:
+    - !reference [.git-setup, script]
+    - Rscript -e "renv::status()"
+    - Rscript -e "pkgdown::build_site()"
+    - ls
+    - rm _pkgdown.yml .gitlab-ci.yml .Rbuildignore .Rprofile Dockerfile LICENSE NAMESPACE README.md zueridown.Rproj
+    - cp dev/dummy_README.md README.md
+    - rm -r -f -v dev inst R 
+    - ls -R
+    - git add .
+    - git commit -m "remove everything including fonts, keep docs, man, and readme"
+    - !reference [.orphan-commit-push, script]
+    
