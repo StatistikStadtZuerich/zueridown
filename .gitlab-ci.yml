@@ -38,13 +38,16 @@ build-remove-orphan-push:
   script:
     - !reference [.git-setup, script]
     - Rscript -e "renv::status()"
-    - Rscript -e "pkgdown::build_site()"
-    - ls
-    - rm _pkgdown.yml .gitlab-ci.yml .Rbuildignore .Rprofile Dockerfile LICENSE NAMESPACE README.md zueridown.Rproj
+    - mkdir pkgdown
+    # use normal readme for pkgdown home site
+    - cp README.md pkgdown/index.md
+    # create dummy readme to be shown in github as readme
     - cp dev/dummy_README.md README.md
+    # remove stuff that is not needed
+    - rm  .gitlab-ci.yml .Rbuildignore .Rprofile
     - rm -r -f -v dev inst R 
     - ls -R
     - git add .
-    - git commit -m "remove everything including fonts, keep docs, man, and readme"
+    - git commit -m "remove fonts etc., swap readmes"
     - !reference [.orphan-commit-push, script]
     

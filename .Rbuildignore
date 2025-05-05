@@ -4,8 +4,10 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 .gitlab-ci.yml
-_pkgdown.yml
 Dockerfile
 ^docs$
 ^dev$
+^_pkgdown\.yml$
+^pkgdown$
+^\.github$
 ^air\.toml$
