@@ -14,3 +14,4 @@ inst/rmarkdown/templates/article_without_bib_with_gls/skeleton/skeleton.pdf
 inst/rmarkdown/templates/article_without_bib_with_gls/skeleton/skeleton.tex
 inst/rmarkdown/templates/article_without_bib_with_gls/skeleton/skeleton_files/figure-latex/figura1-1.pdf
 *.pdf
+docs

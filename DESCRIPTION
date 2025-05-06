@@ -7,8 +7,7 @@ Authors@R: c(
     person("Statistik Stadt Zürich", role = "fnd", email = "statistik@zuerich.ch")
     )
 Description: A collection of Zurich-themed RMarkdown templates for creating reports, using the zueritheme and zuericolors packages.
-URL: https://ssz-webservices-prod.cmp.szh.loc/zueridown/, https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/libraries/zueriverse/zueridown
-BugReports: https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/libraries/zueriverse/zueridown/-/issues
+URL:  https://statistikstadtzuerich.github.io/zueridown/, https://github.com/StatistikStadtZuerich/zueridown, https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/libraries/zueriverse/zueridown
 License: file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.3.2
