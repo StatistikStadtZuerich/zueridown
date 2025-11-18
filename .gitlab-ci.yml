@@ -1,19 +1,16 @@
 include:
+  # use template for all stages 
+  - project: "OE-7035/ssz-da/templates/pipeline-templates"
+    ref: v1.1.0
+    file: "stages.yml"
+  # use template for gitlab pipeline to push main to github
+  - project: "OE-7035/ssz-da/templates/pipeline-templates"
+    ref: v1.1.0
+    file: "publish-to-github.yml"
   # use template for gitlab pipeline to check and build
   - project: "OE-7035/ssz-da/templates/pipeline-templates"
-    ref: "main"
+    ref: v1.1.0
     file: "r-check-and-build-packages.yml"
-  - project: "OE-7035/ssz-da/templates/pipeline-templates"
-    ref: "main"
-    file: "publish-to-github-components.yml"
-  - project: "OE-7035/ssz-da/templates/pipeline-templates"
-    ref: "main"
-    file: "publish-to-github.yml"
-
-stages:
-  - test
-  - build
-  - deploy-prod
   
 # run check (R CMD check of R package)
 r-devtools-check:
@@ -26,7 +23,7 @@ r-pkgdown-build-no-commit:
 # rest of the pipeline: build pkgdown site, remove almost everything except dummy readme and pkgdown site
 # then commit and push to github to publish pkgdown site as github pages
 build-remove-orphan-push:
-  image: $CI_REGISTRY/docker-hub-proxy/rocker/tidyverse:4.3.2
+  image: $CI_REGISTRY/docker-hub-proxy/rocker/tidyverse:$R_VERSION
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   extends:
