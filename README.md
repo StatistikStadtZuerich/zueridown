@@ -54,7 +54,7 @@ remotes::install_local("<path_to_location>/zueridown-main", dependencies = FALSE
 The package can also be directly installed from here with the appropriate git credentials. If you are already cloning repositories from GitLab, you can simply run:
 
 ``` r
-remotes::install_git("https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/zueriverse/zueridown")
+remotes::install_git("https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/libraries/zueriverse/zueridown.git")
 ```
 
 Otherwise you need to create a personal access token in your settings, and use this as a password, together with your GitLab username.
