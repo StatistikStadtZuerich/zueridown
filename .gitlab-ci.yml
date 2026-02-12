@@ -41,8 +41,8 @@ build-remove-orphan-push:
     # create dummy readme to be shown in github as readme
     - cp dev/dummy_README.md README.md
     # remove stuff that is not needed
-    - rm  .gitlab-ci.yml .Rbuildignore .Rprofile
-    - rm -r -f -v dev inst R 
+    - rm  .gitlab-ci.yml .Rbuildignore .Rprofile ssz-upipeline-proxy.keytab
+    - rm -r -f -v dev inst R renv/cache
     - ls -R
     - git add .
     - git commit -m "remove fonts etc., swap readmes"
