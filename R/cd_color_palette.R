@@ -5,7 +5,7 @@
 #' The specification of the colors is:
 #' \figure{palettes.png}
 #'
-#'@param name character. Name of the color palette. Default Palette 1.
+#' @param name character. Name of the color palette. Default Palette 1.
 #'
 #'
 #' @export

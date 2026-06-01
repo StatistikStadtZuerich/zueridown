@@ -36,8 +36,8 @@
 #' cd_page_title_box(
 #'   title = paste0("Title", params$a),
 #'   subtitle = paste0("Subtitle", params$b)
-#'   )
-#'  }
+#' )
+#' }
 #' @export
 #'
 cd_page_title_photo <- function(
