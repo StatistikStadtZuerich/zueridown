@@ -53,7 +53,7 @@ cd_page_title_box <- function(
       package = "zueridown",
       "indiedown",
       "res",
-      "logo_stzh_ssz_cmyk_blau_print_a3_a4_a5.eps"
+      "logo_stzh_ssz_cmyk_blau_print_a3_a4_a5.pdf"
     )
   )
 ) {

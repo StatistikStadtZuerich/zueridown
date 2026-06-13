@@ -14,7 +14,7 @@ cd_page_title_box(
   subtitle_size = "25pt",
   subtitle_below_size = "20pt",
   logo_path = default(NULL, system.file(package = "zueridown", "indiedown", "res",
-    "logo_stzh_ssz_cmyk_blau_print_a3_a4_a5.eps"))
+    "logo_stzh_ssz_cmyk_blau_print_a3_a4_a5.pdf"))
 )
 }
 \arguments{
