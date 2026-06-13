@@ -32,7 +32,7 @@ cd_last_page <- function(
   text = "Mehr Zahlen und Fakten  finden Sie unter",
   link_label = "stadt-zuerich.ch",
   link_full = "stadt-zuerich.ch/statistik",
-  entity = "Stadt Zürich",
+  entity = "Stadt Z\u00fcrich",
   department = "[department]",
   address = "[address]",
   tel = "[tel]",

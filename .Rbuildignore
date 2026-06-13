@@ -10,4 +10,5 @@ Dockerfile
 ^_pkgdown\.yml$
 ^pkgdown$
 ^\.github$
+^inst/indiedown/fonts/\.gitkeep$
 ^air\.toml$
