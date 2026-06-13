@@ -2,15 +2,14 @@
 % Please edit documentation in R/cd_big_paragraph.R
 \name{cd_big_paragraph}
 \alias{cd_big_paragraph}
-\title{Title page LaTeX code}
+\title{Lead paragraph}
 \usage{
 cd_big_paragraph(text = default(""))
 }
 \arguments{
-\item{color}{Character. Document subtitle.}
-
-\item{text_color}{Character.}
+\item{text}{Character. The paragraph text.}
 }
 \description{
-Generates 'asis' LaTeX code to create a title page
+Generates 'asis' LaTeX code for a large, emphasised lead paragraph
+(for example a summary at the start of a report).
 }

@@ -2,15 +2,10 @@
 % Please edit documentation in R/cd_page_table_of_figures.R
 \name{cd_page_table_of_figures}
 \alias{cd_page_table_of_figures}
-\title{Title page LaTeX code}
+\title{List of figures}
 \usage{
 cd_page_table_of_figures()
 }
-\arguments{
-\item{color}{Character. Document subtitle.}
-
-\item{text_color}{Character.}
-}
 \description{
-Generates 'asis' LaTeX code to create a title page
+Generates 'asis' LaTeX code for the list of figures.
 }

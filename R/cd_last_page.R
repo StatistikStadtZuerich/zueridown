@@ -16,12 +16,12 @@
 #' @param address Default "address".
 #' @param tel Default "tel"
 #' @param color_palette Color palette of the last page. Default
-#' "palette5". You can see all palettes in \code{\link{cd_color_palette}}
+#' "palette1". You can see all palettes in \code{\link{cd_color_palette}}
 #' @param arrow_qr Character to select if an arrow (arrow_qr = "arrow"),
 #'  or a QR image (arrow_qr = "qr") is shown in the last page. When "qr" is
 #'  selected a sample of a QR image is presented. To change this image, use the
 #'  param "arrow_qr_path". Default "arrow".
-#'  @param arrow_qr_path path to the image of an arrow or QR code
+#' @param arrow_qr_path path to the image of an arrow or QR code
 #'  for the last page.
 #'
 #' @seealso \code{\link{cd_color_palette}}

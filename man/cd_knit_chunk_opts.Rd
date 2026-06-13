@@ -16,11 +16,25 @@ cd_knit_chunk_opts(
 )
 }
 \arguments{
-\item{metadata}{Pass Rmarkdown arguments from yml header for instance title, 
+\item{metadata}{Pass Rmarkdown arguments from yml header for instance title,
 twocolumn, or lang.}
+
+\item{fig.width, fig.height}{Numeric. Default figure width/height in inches.
+When `NULL` (the default), sensible values are chosen from the `twocolumn`
+and `wide` metadata fields.}
+
+\item{fig.pos}{Character. LaTeX figure placement specifier. Default `"h"`.}
+
+\item{cache}{Logical. Knitr chunk caching. Default `FALSE`.}
+
+\item{message}{Logical. Show messages. Default `FALSE`.}
+
+\item{echo}{Logical. Echo source code. Default `FALSE`.}
+
+\item{tidy}{Logical. Reformat code. Default `FALSE`.}
 }
 \description{
-Configuration of arguments to set up chunks. You can check arguments and 
-options in the documentation of the knitr package at 
+Configuration of arguments to set up chunks. You can check arguments and
+options in the documentation of the knitr package at
 \href{https://yihui.org/knitr/options/#chunk-options}{https://yihui.org/knitr/options/#chunk-options}
 }

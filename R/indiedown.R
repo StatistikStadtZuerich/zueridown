@@ -2,6 +2,18 @@
 #
 # do not customize this file!
 
+#' R Markdown output format backed by indiedown assets
+#'
+#' Wraps [rmarkdown::pdf_document()] and injects the asset package's
+#' `preamble.tex` and pre-processor. Downstream packages such as `zueridown`
+#' call this from their own output format (see [zueridown()]).
+#'
+#' @param includes Named list as produced by [rmarkdown::includes()]. The
+#'   asset `preamble.tex` is added as `in_header` unless one is already set.
+#' @param ... Passed on to [rmarkdown::pdf_document()].
+#'
+#' @return An R Markdown output format object.
+#'
 #' @export
 indiedown_pdf_document_with_asset <- function(includes = NULL, ...) {
   # file preamble
@@ -121,12 +133,17 @@ list_to_pandoc_args <- function(list) {
 
 #' Path to indiedown assets, usable in R or LaTeX
 #'
+#' @param ... Path components passed on to [system.file()], appended to the
+#'   package's `indiedown` asset directory.
+#'
 #' @export
 indiedown_path <- function(...) {
   system.file("indiedown", ..., package = getPackageName())
 }
 
 #' Path to indiedown assets, usable in LaTeX
+#'
+#' @param ... Path components passed on to [indiedown_path()].
 #'
 #' @export
 indiedown_path_tex <- function(...) {
@@ -169,6 +186,17 @@ read_tex <- function(file) {
   )
 }
 
+#' Default value for `NULL`
+#'
+#' Returns `x`, or `default` when `x` is `NULL`. Used throughout the `cd_*`
+#' helpers to fall back to a sensible default when a YAML metadata field is
+#' absent.
+#'
+#' @param x Value to test for `NULL`.
+#' @param default Value to return when `x` is `NULL`. Defaults to `""`.
+#'
+#' @return `x` if not `NULL`, otherwise `default`.
+#'
 #' @export
 default <- function(x, default = "") {
   ans <- if (is.null(x)) default else x

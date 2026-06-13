@@ -6,7 +6,9 @@
 #' @param caption Character. Written in bold
 #' @param subcaption Character. If you want to have it on more lines,
 #' insert the latex command 'newline' in the code.
-
+#' @param label Character. Optional LaTeX label for cross-referencing the
+#' figure or table (for example `"fig:figura1"`).
+#'
 #' @export
 
 cd_caption_subcaption <- function(
