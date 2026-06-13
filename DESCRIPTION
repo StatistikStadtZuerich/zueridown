@@ -16,10 +16,9 @@ Imports:
     knitr,
     rmarkdown,
     glue,
-    zueritheme,
-    zuericolors,
     yaml,
-    withr
+    withr,
+    utils
 Suggests:
     markdown,
     zueritheme (>= 0.0.1),
