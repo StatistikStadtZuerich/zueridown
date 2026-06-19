@@ -24,8 +24,7 @@ Suggests:
     zueritheme (>= 0.0.1),
     zuericolors,
     ggplot2,
-    gridExtra,
-    stringr
+    gridExtra
 Remotes:
     github::StatistikStadtZuerich/zueritheme,
     github::StatistikStadtZuerich/zuericolors
