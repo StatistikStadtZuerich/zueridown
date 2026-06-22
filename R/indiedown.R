@@ -123,7 +123,7 @@ list_to_pandoc_args <- function(list) {
 #'
 #' @export
 indiedown_path <- function(...) {
-  system.file("indiedown", ..., package = getPackageName())
+  system.file("indiedown", ..., package = utils::packageName())
 }
 
 #' Path to indiedown assets, usable in LaTeX

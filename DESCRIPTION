@@ -16,17 +16,15 @@ Imports:
     knitr,
     rmarkdown,
     glue,
-    zueritheme,
-    zuericolors,
     yaml,
-    withr
+    withr,
+    utils
 Suggests:
     markdown,
     zueritheme (>= 0.0.1),
     zuericolors,
     ggplot2,
-    gridExtra,
-    stringr
+    gridExtra
 Remotes:
     github::StatistikStadtZuerich/zueritheme,
     github::StatistikStadtZuerich/zuericolors
