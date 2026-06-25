@@ -24,7 +24,7 @@
 #'
 cd_page_impressum <- function(
   subtitle = default(rmarkdown::metadata$subtitle),
-  city = "Stadt Zürich",
+  city = "Stadt Z\u00fcrich",
   department = "[department]",
   address = "[address]",
   tel = "[tel]",
