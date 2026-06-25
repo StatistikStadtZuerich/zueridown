@@ -1,0 +1,19 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+inst/rmarkdown/templates/article_with_bib_and_gls/skeleton/skeleton.pdf
+inst/rmarkdown/templates/article_with_bib_and_gls/skeleton/skeleton.tex
+inst/rmarkdown/templates/article_with_bib_and_gls/skeleton/skeleton_files/figure-latex/unnamed-chunk-7-1.pdf
+inst/rmarkdown/templates/article_with_bib_without_gls/skeleton/skeleton.pdf
+inst/rmarkdown/templates/article_with_bib_without_gls/skeleton/skeleton.tex
+inst/rmarkdown/templates/article_without_bib_and_gls/skeleton/skeleton.pdf
+inst/rmarkdown/templates/article_without_bib_and_gls/skeleton/skeleton.tex
+inst/rmarkdown/templates/article_without_bib_and_gls/skeleton/skeleton_files/figure-latex/figura1-1.pdf
+inst/rmarkdown/templates/article_without_bib_with_gls/skeleton/skeleton.pdf
+inst/rmarkdown/templates/article_without_bib_with_gls/skeleton/skeleton.tex
+inst/rmarkdown/templates/article_without_bib_with_gls/skeleton/skeleton_files/figure-latex/figura1-1.pdf
+*.pdf
+# keep the bundled SSZ logo (PDF version, embeddable by xelatex)
+!inst/indiedown/res/logo_stzh_ssz_cmyk_blau_print_a3_a4_a5.pdf
+docs
