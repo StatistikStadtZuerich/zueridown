@@ -6,6 +6,10 @@
 \usage{
 indiedown_path(...)
 }
+\arguments{
+\item{...}{Path components passed on to [system.file()], appended to the
+package's `indiedown` asset directory.}
+}
 \description{
 Path to indiedown assets, usable in R or LaTeX
 }

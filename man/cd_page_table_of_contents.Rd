@@ -10,13 +10,13 @@ cd_page_table_of_contents(
 )
 }
 \arguments{
-\item{color_palette}{Character. Set the color palette for the background in 
-the table of content. Default is "palette1". 
-There are 5 possible color palettes. See more in 
+\item{color_palette}{Character. Set the color palette for the background in
+the table of content. Default is "palette1".
+There are 14 possible color palettes. See more in
 ?cd_color_palette() function.}
 
-\item{toc_depth}{Numeric. Specify the depth of headers in the table of 
-content. Default is 2; meaning that all level 1 and 2 headers will be 
+\item{toc_depth}{Numeric. Specify the depth of headers in the table of
+content. Default is 2; meaning that all level 1 and 2 headers will be
 included in the table of content.}
 }
 \description{

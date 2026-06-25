@@ -4,7 +4,7 @@
 #'
 #' @param color_palette Character. Set the color palette for the background in
 #' the table of content. Default is "palette1".
-#' There are 5 possible color palettes. See more in
+#' There are 14 possible color palettes. See more in
 #' ?cd_color_palette() function.
 #' @param toc_depth Numeric. Specify the depth of headers in the table of
 #' content. Default is 2; meaning that all level 1 and 2 headers will be

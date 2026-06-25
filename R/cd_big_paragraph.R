@@ -1,9 +1,9 @@
-#' Title page LaTeX code
+#' Lead paragraph
 #'
-#' Generates 'asis' LaTeX code to create a title page
+#' Generates 'asis' LaTeX code for a large, emphasised lead paragraph
+#' (for example a summary at the start of a report).
 #'
-#' @param color Character. Document subtitle.
-#' @param text_color Character.
+#' @param text Character. The paragraph text.
 #'
 #' @export
 #'

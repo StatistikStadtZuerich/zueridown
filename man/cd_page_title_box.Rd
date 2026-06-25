@@ -20,8 +20,8 @@ cd_page_title_box(
 \arguments{
 \item{title}{Character. Document title. Default title parameter in yml.
 Use this parameter to specify a different title
- from the title declared in the yml header of the document. If a parameter is used 
- in the yml, remove the title from the yml and used this parameter to 
+ from the title declared in the yml header of the document. If a parameter is used
+ in the yml, remove the title from the yml and used this parameter to
  specify the title (see examples).}
 
 \item{subtitle}{Character. Document subtitle. Default subtitle parameter in yml.
@@ -30,23 +30,23 @@ different from the subtitle in the yml header of the document.s}
 
 \item{date}{Character. Document creation date.}
 
-\item{color_palette}{Character. Set the color palette for the document. 
-Default is "palette5". There are 5 possible color palettes. See more in 
+\item{color_palette}{Character. Set the color palette for the document.
+Default is "palette1". There are 14 possible color palettes. See more in
 ?cd_color_palette() function.}
 
 \item{subtitle_below}{Character. Document subtitle. Use this parameter to specify a subtitle
 different from the subtitle in the yml header of the document.}
 
-\item{title_size}{Character. Fix the letter size for the title in the cover 
+\item{title_size}{Character. Fix the letter size for the title in the cover
 page. Default is "40pt".}
 
-\item{subtitle_size}{Character. Fix the letter size for the subtitle in the cover 
+\item{subtitle_size}{Character. Fix the letter size for the subtitle in the cover
 page. Default is "25pt".}
 
 \item{subtitle_below_size}{Character. The complete path of the picture. Default is
 the picture included in the package.}
 
-\item{logo_path}{Character. Character. The complete path of the logo for the 
+\item{logo_path}{Character. Character. The complete path of the logo for the
 cover page. Default is the logo included in the package.}
 }
 \description{
@@ -63,6 +63,6 @@ cd_page_title_box()
 cd_page_title_box(
   title = paste0("Title", params$a),
   subtitle = paste0("Subtitle", params$b)
-  )
+)
 }
 }

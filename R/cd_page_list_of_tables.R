@@ -1,9 +1,6 @@
-#' Title page LaTeX code
+#' List of tables
 #'
-#' Generates 'asis' LaTeX code to create a title page
-#'
-#' @param color Character. Document subtitle.
-#' @param text_color Character.
+#' Generates 'asis' LaTeX code for the list of tables.
 #'
 #' @export
 #'

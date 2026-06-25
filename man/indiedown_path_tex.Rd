@@ -6,6 +6,9 @@
 \usage{
 indiedown_path_tex(...)
 }
+\arguments{
+\item{...}{Path components passed on to [indiedown_path()].}
+}
 \description{
 Path to indiedown assets, usable in LaTeX
 }

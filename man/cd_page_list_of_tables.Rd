@@ -2,15 +2,10 @@
 % Please edit documentation in R/cd_page_list_of_tables.R
 \name{cd_page_list_of_tables}
 \alias{cd_page_list_of_tables}
-\title{Title page LaTeX code}
+\title{List of tables}
 \usage{
 cd_page_list_of_tables()
 }
-\arguments{
-\item{color}{Character. Document subtitle.}
-
-\item{text_color}{Character.}
-}
 \description{
-Generates 'asis' LaTeX code to create a title page
+Generates 'asis' LaTeX code for the list of tables.
 }

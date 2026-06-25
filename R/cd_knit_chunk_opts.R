@@ -6,6 +6,14 @@
 #'
 #' @param metadata Pass Rmarkdown arguments from yml header for instance title,
 #' twocolumn, or lang.
+#' @param fig.width,fig.height Numeric. Default figure width/height in inches.
+#' When `NULL` (the default), sensible values are chosen from the `twocolumn`
+#' and `wide` metadata fields.
+#' @param fig.pos Character. LaTeX figure placement specifier. Default `"h"`.
+#' @param cache Logical. Knitr chunk caching. Default `FALSE`.
+#' @param message Logical. Show messages. Default `FALSE`.
+#' @param echo Logical. Echo source code. Default `FALSE`.
+#' @param tidy Logical. Reformat code. Default `FALSE`.
 #'
 #' @export
 #'

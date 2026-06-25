@@ -13,7 +13,7 @@
 #' different from the subtitle in the yml header of the document.
 #' @param date Character. Document creation date.
 #' @param color_palette Character. Set the color palette for the document.
-#' Default is "palette5". There are 5 possible color palettes. See more in
+#' Default is "palette1". There are 14 possible color palettes. See more in
 #' ?cd_color_palette() function.
 #' @param subtitle_below Character. Default is empty blank. Set the subtitle for
 #' the cover page.
