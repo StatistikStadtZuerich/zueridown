@@ -36,6 +36,10 @@ publish-main-prune-to-github:
     - !reference [.git-setup, script]
     # FIXME: To be removed when moving to main
     - git checkout main-prune
+    # This was necessary for the first run:
+    # https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/libraries/zueriverse/zueridown/-/jobs/1169750#L46
+    # remote: fatal: did not receive expected object 3cfcf5bcf6adbc335521c8f9b793c4aa4f3afe80
+    - git fetch --unshallow
     # The code below is the contents of .push-main, can later be changed back to
     #   - !reference [.push-main, script]
     # Expanded here to avoid the semantic conflict with ".push-main" vs. "main-prune".
