@@ -1,5 +1,5 @@
 include:
-  # use template for all stages 
+  # use template for all stages
   - project: "OE-7035/ssz-da/templates/pipeline-templates"
     ref: v1.1.0
     file: "stages.yml"
@@ -11,40 +11,33 @@ include:
   - project: "OE-7035/ssz-da/templates/pipeline-templates"
     ref: v1.1.0
     file: "r-check-and-build-packages.yml"
-  
+
 # run check (R CMD check of R package)
 r-devtools-check:
   extends:
     - .r-devtools-check
-    
+
 r-pkgdown-build-no-commit:
   extends: ".r-pkgdown-build-no-commit"
 
-# rest of the pipeline: build pkgdown site, remove almost everything except dummy readme and pkgdown site
-# then commit and push to github to publish pkgdown site as github pages
-build-remove-orphan-push:
-  image: $CI_REGISTRY/docker-hub-proxy/rocker/tidyverse:$R_VERSION
+# rest of the pipeline: commit and push to github to publish pkgdown site as github pages
+# FIXME: Replace with a reference to .publish-main-to-github once the font-free code
+# has moved to the main branch.
+publish-main-prune-to-github:
+  # image specification necessary to have git available
+  image: $CI_REGISTRY/docker-hub-proxy/alpine/git:latest
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    # temporary: we sync the main-prune branch for now, will swap with main once feature parity is established
+    - if: $CI_COMMIT_BRANCH == "main-prune"
   extends:
-    - .common-settings-publish-to-github
-    - .common-settings-check-and-build
     - .git-setup
-    - .orphan-commit-push
   stage: deploy-prod
   script:
     - !reference [.git-setup, script]
-    - Rscript -e "renv::status()"
-    - mkdir pkgdown
-    # use normal readme for pkgdown home site
-    - cp README.md pkgdown/index.md
-    # create dummy readme to be shown in github as readme
-    - cp dev/dummy_README.md README.md
-    # remove stuff that is not needed
-    - rm  .gitlab-ci.yml .Rbuildignore .Rprofile ssz-upipeline-proxy.keytab
-    - rm -r -f -v dev inst R renv/cache
-    - ls -R
-    - git add .
-    - git commit -m "remove fonts etc., swap readmes"
-    - !reference [.orphan-commit-push, script]
-    
+    # FIXME: To be removed when moving to main
+    - git checkout main-prune
+    # The code below is the contents of .push-main, can later be changed back to
+    #   - !reference [.push-main, script]
+    # Expanded here to avoid the semantic conflict with ".push-main" vs. "main-prune".
+    - git branch -M main
+    - git push -uf github main
