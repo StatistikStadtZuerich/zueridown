@@ -1,0 +1,3 @@
+# License
+
+    Copyright 2023 Stadt Zurich. All rights reserved.

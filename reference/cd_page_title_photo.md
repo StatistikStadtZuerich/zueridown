@@ -1,0 +1,95 @@
+# Title page LaTeX code
+
+Generates 'asis' LaTeX code to create a title page with a photo in the
+front page.
+
+## Usage
+
+``` r
+cd_page_title_photo(
+  title = default(rmarkdown::metadata$title, "Title"),
+  subtitle = default(rmarkdown::metadata$subtitle, "Subtitle"),
+  date = default(rmarkdown::metadata$date, cd_format_date(Sys.Date())),
+  color_palette = default(cd_color_palette("palette1")),
+  subtitle_below = "",
+  title_image_path = default(NULL, system.file(package = "zueridown", "example",
+    "Sechselaeuteplatz.jpg")),
+  title_size = "40pt",
+  subtitle_size = "25pt",
+  subtitle_below_size = "20pt",
+  logo_path = default(NULL, system.file(package = "zueridown", "indiedown", "res",
+    "logo_stzh_ssz_cmyk_blau_print_a3_a4_a5.pdf"))
+)
+```
+
+## Arguments
+
+- title:
+
+  Character. Document title. Default title parameter in yml. Use this
+  parameter to specify a different title from the title declared in the
+  yml header of the document. If a parameter is used in the yml, remove
+  the title from the yml and used this parameter to specify the title
+  (see examples).
+
+- subtitle:
+
+  Character. Document subtitle. Default subtitle parameter in yml. Use
+  this parameter to specify a subtitle different from the subtitle in
+  the yml header of the document.
+
+- date:
+
+  Character. Document creation date.
+
+- color_palette:
+
+  Character. Set the color palette for the document. Default is
+  "palette1". There are 14 possible color palettes. See more in
+  ?cd_color_palette() function.
+
+- subtitle_below:
+
+  Character. Default is empty blank. Set the subtitle for the cover
+  page.
+
+- title_image_path:
+
+  Character. The complete path of the picture for the cover page.
+  Default is the picture included in the package.
+
+- title_size:
+
+  Character. Fix the letter size for the title in the cover page.
+  Default is "40pt".
+
+- subtitle_size:
+
+  Character. Fix the letter size for the subtitle in the cover page.
+  Default is "25pt".
+
+- subtitle_below_size:
+
+  Character. The complete path of the picture. Default is the picture
+  included in the package.
+
+- logo_path:
+
+  Character. Character. The complete path of the logo for the cover
+  page. Default is the logo included in the package.
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+# using title defined in the yml and default style values
+cd_page_title_box()
+# using title and subtitle with parameters defined in the yml,
+# and default style values.
+# title and subtitle should be removed from the yml.
+cd_page_title_box(
+  title = paste0("Title", params$a),
+  subtitle = paste0("Subtitle", params$b)
+)
+} # }
+```
