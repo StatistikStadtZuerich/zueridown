@@ -1,5 +1,9 @@
 # zueridown (development version)
 
+* A skipped visual test no longer deletes the stored snapshots.
+  The toolchain record lists the bundled font files with checksums.
+  A GitHub Actions workflow runs R CMD check with the snapshot tests and fails if any test is skipped.
+
 * `twocolumn: true` no longer breaks `classoption`.
   Every class option from the document is now kept next to `twocolumn`,
   where `classoption: landscape` used to reach LaTeX as the unknown option `landscapetwocolumn`.

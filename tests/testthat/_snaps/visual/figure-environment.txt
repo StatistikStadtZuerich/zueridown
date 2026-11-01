@@ -10,3 +10,7 @@ pdftools: 3.9.1
 rmarkdown: 2.32
 knitr: 1.52
 tinytex: 0.61
+font: texgyreheros-bold.otf (md5 f5f20609880fff666e17267854df804d)
+font: texgyreheros-bolditalic.otf (md5 21c0102e75ad67ba80fc5e3bd792af52)
+font: texgyreheros-italic.otf (md5 418e1daec3a0c0b2d8ebb349c646ec22)
+font: texgyreheros-regular.otf (md5 46896831ad260afebc87cd85a7ea159a)

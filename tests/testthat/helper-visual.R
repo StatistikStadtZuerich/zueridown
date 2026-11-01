@@ -21,16 +21,38 @@
 # (e.g. a ggplot theme) but cannot replace rasterised-PDF comparison for what
 # these packages are for.
 
-skip_if_no_visual_snapshots <- function() {
-  testthat::skip_on_cran()
-  if (tolower(Sys.info()[["sysname"]]) != "linux") {
-    testthat::skip("pixel-exact visual snapshots run on Linux only")
+# The snapshot directory is named after the test file, test-visual.R.
+visual_snaps_dir <- "visual"
+
+# testthat deletes snapshot files it did not see during a run, but a skipped
+# test never reaches `expect_snapshot_file()`, so a skipped run (CRAN, macOS,
+# no LaTeX, ...) would wipe the committed references. Announce the existing
+# references of snapshot `name` so that they are kept.
+announce_visual_snapshots <- function(name) {
+  refs <- list.files(testthat::test_path("_snaps", visual_snaps_dir))
+  for (ref in refs[startsWith(refs, paste0(name, "-"))]) {
+    testthat::announce_snapshot_file(name = ref)
   }
-  testthat::skip_if_not_installed("pdftools")
-  testthat::skip_if_not(
-    (requireNamespace("tinytex", quietly = TRUE) && tinytex::is_tinytex()) ||
-      nzchar(Sys.which("xelatex")),
-    "no LaTeX engine (TinyTeX / xelatex) available"
+}
+
+# Skips the test unless pixel-exact rendering is possible. A skip is also
+# the moment to announce the references of snapshot `name`, see above.
+skip_if_no_visual_snapshots <- function(name) {
+  withCallingHandlers(
+    {
+      testthat::skip_on_cran()
+      if (tolower(Sys.info()[["sysname"]]) != "linux") {
+        testthat::skip("pixel-exact visual snapshots run on Linux only")
+      }
+      testthat::skip_if_not_installed("pdftools")
+      testthat::skip_if_not(
+        (requireNamespace("tinytex", quietly = TRUE) &&
+          tinytex::is_tinytex()) ||
+          nzchar(Sys.which("xelatex")),
+        "no LaTeX engine (TinyTeX / xelatex) available"
+      )
+    },
+    skip = function(cnd) announce_visual_snapshots(name)
   )
 }
 
@@ -46,6 +68,11 @@ visual_snapshot_environment <- function() {
       NA_character_
     }
   }
+  fonts <- list.files(
+    indiedown_path("fonts"),
+    pattern = "\\.otf$",
+    full.names = TRUE
+  )
   c(
     "# Toolchain used to generate the visual snapshots in this directory.",
     "# Pixel-exact comparisons are only stable on this toolchain; refreshed",
@@ -58,7 +85,14 @@ visual_snapshot_environment <- function() {
     paste0("pdftools: ", pkg_version("pdftools")),
     paste0("rmarkdown: ", pkg_version("rmarkdown")),
     paste0("knitr: ", pkg_version("knitr")),
-    paste0("tinytex: ", pkg_version("tinytex"))
+    paste0("tinytex: ", pkg_version("tinytex")),
+    paste0(
+      "font: ",
+      basename(fonts),
+      " (md5 ",
+      unname(tools::md5sum(fonts)),
+      ")"
+    )
   )
 }
 
@@ -73,7 +107,7 @@ compare_snapshot_environment <- function(old, new) {
 # Render `rmd` (a character vector of R Markdown lines) to PDF, rasterise each
 # page, and snapshot the images. `name` prefixes the snapshot files.
 expect_pdf_snapshot <- function(name, rmd, dpi = 100) {
-  skip_if_no_visual_snapshots()
+  skip_if_no_visual_snapshots(name)
 
   dir <- withr::local_tempdir()
   input <- file.path(dir, paste0(name, ".Rmd"))

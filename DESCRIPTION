@@ -22,6 +22,7 @@ Imports:
     withr,
     utils
 Suggests:
+    callr,
     markdown,
     zueritheme (>= 0.0.1),
     zuericolors,

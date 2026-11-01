@@ -1,0 +1,89 @@
+# Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
+# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
+#
+# Runs R CMD check, including the pixel-exact visual snapshot tests.
+# These are only stable on the toolchain the references were rendered with,
+# which is recorded in tests/testthat/_snaps/visual/*-environment.txt:
+# poppler 24.02 (the one of ubuntu-24.04), pandoc 3.10.2, R 4.5.3 and TeX Live 2026.
+# When the snapshots are regenerated on another toolchain, bump the versions here with them.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+name: R-CMD-check.yaml
+
+permissions: read-all
+
+jobs:
+  R-CMD-check:
+    runs-on: ubuntu-24.04
+
+    name: ubuntu-24.04 (R 4.5.3)
+
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      # .Rprofile sources renv/activate.R, which would bootstrap renv and restore renv.lock.
+      # The dependencies come from setup-r-dependencies instead.
+      RENV_CONFIG_AUTOLOADER_ENABLED: false
+      # zueritheme and zuericolors are installed from Remotes:, but check should not insist on all Suggests.
+      _R_CHECK_FORCE_SUGGESTS_: false
+      # Without this, skip_on_cran() skips the visual tests.
+      NOT_CRAN: true
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: r-lib/actions/setup-pandoc@v2
+        with:
+          pandoc-version: '3.10.2'
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.5.3'
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-tinytex@v2
+
+      # pdftools rasterises the pages of the PDF with poppler.
+      - name: Install poppler
+        run: sudo apt-get update && sudo apt-get install -y libpoppler-cpp-dev
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rcmdcheck
+          needs: check
+
+      - name: Show the toolchain
+        run: |
+          pandoc --version | head -n 1
+          xelatex --version | head -n 1
+          dpkg-query --show libpoppler-cpp-dev
+          Rscript -e 'cat("pdftools", format(packageVersion("pdftools")), "/ poppler", pdftools::poppler_config()$version, "\n")'
+
+      - uses: r-lib/actions/check-r-package@v2
+        with:
+          upload-results: never
+
+      # A test that is skipped passes, so make sure the visual tests really ran.
+      - name: Check that no test was skipped
+        run: grep -E '\[ FAIL 0 \| WARN [0-9]+ \| SKIP 0 \|' check/*.Rcheck/tests/testthat.Rout
+
+      # On failure, upload what is needed to review the visual snapshots:
+      # the references are in tests/testthat/_snaps/visual,
+      # and the images that differ from them are written next to those as *.new.png.
+      - name: Upload the new visual snapshots
+        if: failure()
+        uses: actions/upload-artifact@v6
+        with:
+          name: visual-snapshots-new
+          path: check/*.Rcheck/tests/testthat/_snaps/**/*.new.*
+          if-no-files-found: ignore
+
+      - name: Upload the check directory
+        if: failure()
+        uses: actions/upload-artifact@v6
+        with:
+          name: check-results
+          path: check
