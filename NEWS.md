@@ -1,5 +1,9 @@
 # zueridown (development version)
 
+* The code shared with other indiedown template packages
+  now comes from indiedown as the standalone file `R/import-standalone-indiedown.R`.
+  Update it with `usethis::use_standalone("cynkra/indiedown", "indiedown")`.
+
 * A skipped visual test no longer deletes the stored snapshots.
   The toolchain record lists the bundled font files with checksums.
   A GitHub Actions workflow runs R CMD check with the snapshot tests and fails if any test is skipped.

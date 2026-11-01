@@ -26,3 +26,23 @@ zueridown <- function(...) {
     ...
   )
 }
+
+#' R Markdown output format backed by indiedown assets
+#'
+#' Wraps [rmarkdown::pdf_document()] and injects the asset package's
+#' `preamble.tex` and pre-processor. Downstream packages such as `zueridown`
+#' call this from their own output format (see [zueridown()]).
+#'
+#' The function is defined in `R/import-standalone-indiedown.R`,
+#' which does not export it.
+#'
+#' @param includes Named list as produced by [rmarkdown::includes()]. The
+#'   asset `preamble.tex` is added as `in_header` unless one is already set.
+#' @param ... Passed on to [rmarkdown::pdf_document()].
+#'
+#' @return An R Markdown output format object.
+#'
+#' @name indiedown_pdf_document_with_asset
+#' @usage indiedown_pdf_document_with_asset(includes = NULL, ...)
+#' @export indiedown_pdf_document_with_asset
+NULL
