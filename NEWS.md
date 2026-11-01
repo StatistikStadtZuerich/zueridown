@@ -1,5 +1,8 @@
 # zueridown (development version)
 
+* New visual snapshot tests render sample documents to PDF and compare each page byte for byte with stored images.
+  The system fonts are hidden during the tests, and the toolchain is recorded next to the snapshots.
+
 * The main font, TeX Gyre Heros, now ships with the package and is loaded by file name.
   Rendering no longer fails with "The font "TeX Gyre Heros" cannot be found" on a fresh TinyTeX installation,
   and the output no longer depends on the fonts installed on the system.

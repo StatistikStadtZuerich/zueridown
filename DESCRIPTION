@@ -25,7 +25,11 @@ Suggests:
     zueritheme (>= 0.0.1),
     zuericolors,
     ggplot2,
-    gridExtra
+    gridExtra,
+    pdftools,
+    testthat (>= 3.0.0),
+    tinytex
+Config/testthat/edition: 3
 Remotes:
     github::StatistikStadtZuerich/zueritheme,
     github::StatistikStadtZuerich/zuericolors
