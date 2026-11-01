@@ -1,5 +1,10 @@
 # zueridown (development version)
 
+* The main font is now the licensed Helvetica Neue LT Pro, 65 Medium with 85 Heavy as bold, if all of these faces are installed.
+  Otherwise the bundled TeX Gyre Heros is used, and a message names the fallback and explains how to install fonts.
+  The message appears at the start of the render and again at its end, once the PDF is written.
+  A `mainfont` in the document or the `zueridown.mainfont` option still takes precedence.
+
 * The code shared with other indiedown template packages
   now comes from indiedown as the standalone file `R/import-standalone-indiedown.R`.
   Update it with `usethis::use_standalone("cynkra/indiedown", "indiedown")`.
@@ -23,10 +28,8 @@
 * New visual snapshot tests render sample documents to PDF and compare each page byte for byte with stored images.
   The system fonts are hidden during the tests, and the toolchain is recorded next to the snapshots.
 
-* The main font, TeX Gyre Heros, now ships with the package and is loaded by file name.
-  Rendering no longer fails with "The font "TeX Gyre Heros" cannot be found" on a fresh TinyTeX installation,
-  and the output no longer depends on the fonts installed on the system.
-  A `mainfont` set in the document takes precedence.
+* TeX Gyre Heros, the fallback main font, now ships with the package and is loaded by file name.
+  Rendering no longer fails with "The font "TeX Gyre Heros" cannot be found" on a fresh TinyTeX installation.
   The font keeps its own license, the GUST Font License, see `inst/COPYRIGHTS`.
 
 # zueridown 1.0.0

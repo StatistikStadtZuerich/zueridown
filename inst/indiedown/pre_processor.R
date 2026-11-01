@@ -9,30 +9,6 @@ pre_processor <- function(
   # apply default.yaml (do not remove)
   args <- apply_default_yaml(metadata = metadata)
 
-  # main font: TeX Gyre Heros, shipped in fonts/ and loaded by file name from
-  # the installed package, so that no system font lookup happens;
-  # a `mainfont` set in the document takes precedence.
-  # Pandoc emits both `\setmainfont` and, because `lang` is set,
-  # `\babelfont{rm}` from these variables.
-  # Variables override metadata, so `mainfontoptions` from the document
-  # are appended rather than dropped.
-  if (is.null(metadata[["mainfont"]])) {
-    mainfontoptions <- c(
-      paste0("Path=", indiedown_path_tex("fonts"), "/"),
-      "BoldFont=texgyreheros-bold.otf",
-      "ItalicFont=texgyreheros-italic.otf",
-      "BoldItalicFont=texgyreheros-bolditalic.otf",
-      unlist(metadata[["mainfontoptions"]])
-    )
-    args <- c(
-      args,
-      "--variable",
-      "mainfont:texgyreheros-regular.otf",
-      "--variable",
-      paste0("mainfontoptions:", paste(mainfontoptions, collapse = ","))
-    )
-  }
-
   # set the margin based on twocolumn and wide
   if (is.null(metadata$geometry)) {
     if (isTRUE(metadata$twocolumn) || isTRUE(metadata$wide)) {

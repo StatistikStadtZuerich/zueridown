@@ -8,6 +8,27 @@ documentclass: article
 secnumdepth: 2
 fontsize: "10pt"
 
+# Preferred main font: the licensed Helvetica Neue LT Pro of the corporate design,
+# used if it is installed, by PostScript name:
+# 65 Medium as regular, 85 Heavy as bold, and no italics.
+preferredmainfont: HelveticaNeueLTPro-Md
+preferredmainfontoptions:
+- BoldFont=HelveticaNeueLTPro-Hv
+- ItalicFont=HelveticaNeueLTPro-Md
+- BoldItalicFont=HelveticaNeueLTPro-Md
+
+# Fallback main font: TeX Gyre Heros, a free Helvetica clone,
+# shipped in inst/indiedown/fonts and loaded by path.
+# A document can name another font in its `mainfont` field,
+# a user in the option `zueridown.mainfont`;
+# if that font is not installed, the preferred or fallback font is used.
+mainfont: texgyreheros-regular.otf
+mainfontoptions:
+- Path=<<indiedown_path>>/fonts/
+- BoldFont=texgyreheros-bold.otf
+- ItalicFont=texgyreheros-italic.otf
+- BoldItalicFont=texgyreheros-bolditalic.otf
+
 linestretch: 1.05
 
 geometry:

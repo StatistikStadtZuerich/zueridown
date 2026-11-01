@@ -116,6 +116,8 @@ expect_pdf_snapshot <- function(name, rmd, dpi = 100) {
   # Let fontconfig see the bundled TeX Gyre Heros and nothing else.
   # XeTeX loads the main font by file name and the other fonts from the TeX
   # tree, so rendering needs no system font; this makes sure of it.
+  # It also hides an installed Helvetica Neue LT Pro from the font lookup,
+  # which runs fc-list, so the snapshots always show TeX Gyre Heros.
   # poppler, however, substitutes the fonts that R's pdf() device does not
   # embed (Helvetica) via fontconfig, so figure text would otherwise depend on
   # the installed fonts, or be dropped if no font is visible at all.
