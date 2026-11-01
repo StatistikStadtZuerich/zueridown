@@ -9,6 +9,7 @@ Authors@R: c(
 Description: A collection of Zurich-themed RMarkdown templates for creating reports, using the zueritheme and zuericolors packages.
 URL:  https://statistikstadtzuerich.github.io/zueridown/, https://github.com/StatistikStadtZuerich/zueridown, https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/libraries/zueriverse/zueridown
 License: file LICENSE
+Copyright: See file inst/COPYRIGHTS for the bundled TeX Gyre Heros font.
 Encoding: UTF-8
 RoxygenNote: 7.3.2
 Depends: R (>= 3.5.0)

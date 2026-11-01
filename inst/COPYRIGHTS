@@ -1,0 +1,23 @@
+The package as a whole is covered by the file LICENSE,
+with the exception of the font files listed below,
+which keep their own copyright and license.
+
+inst/indiedown/fonts/texgyreheros-regular.otf
+inst/indiedown/fonts/texgyreheros-bold.otf
+inst/indiedown/fonts/texgyreheros-italic.otf
+inst/indiedown/fonts/texgyreheros-bolditalic.otf
+
+  TeX Gyre Heros, version 2.004, by Bogusław Jackowski and Janusz M. Nowacki.
+  Copyright 2007--2009 for TeX Gyre extensions by B. Jackowski
+  and J.M. Nowacki (on behalf of TeX Users Groups).
+  Based on URW Nimbus Sans L, released by URW++ Design and Development Inc.
+  Vietnamese characters were added by Han The Thanh.
+
+  Licensed under the GUST Font License,
+  an instance of the LaTeX Project Public License, version 1.3c or later.
+  See inst/indiedown/fonts/GUST-FONT-LICENSE.txt
+  and inst/indiedown/fonts/README-TeX-Gyre-Heros.txt.
+
+  The four files are unmodified copies of the OpenType files of the font.
+  The complete font, including the files not shipped with this package,
+  is available from CTAN: https://ctan.org/pkg/tex-gyre

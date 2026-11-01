@@ -5,6 +5,14 @@
 #' highlighting style and the LaTeX engine (`xelatex`, required for the
 #' bundled fonts).
 #'
+#' Unless the document sets `mainfont`, the main font is TeX Gyre Heros,
+#' a Helvetica clone that ships with the package
+#' and is loaded by file name from its installation directory.
+#' The output therefore does not depend on the fonts installed on the system,
+#' and no font needs to be installed.
+#' Any `mainfontoptions` set in the document are appended
+#' to the options that locate the font files.
+#'
 #' @param ... Passed on to [indiedown_pdf_document_with_asset()] and, in turn,
 #'   to [rmarkdown::pdf_document()].
 #'

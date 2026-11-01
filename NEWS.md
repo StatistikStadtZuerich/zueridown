@@ -1,3 +1,11 @@
+# zueridown (development version)
+
+* The main font, TeX Gyre Heros, now ships with the package and is loaded by file name.
+  Rendering no longer fails with "The font "TeX Gyre Heros" cannot be found" on a fresh TinyTeX installation,
+  and the output no longer depends on the fonts installed on the system.
+  A `mainfont` set in the document takes precedence.
+  The font keeps its own license, the GUST Font License, see `inst/COPYRIGHTS`.
+
 # zueridown 1.0.0
 
 * no functional changes
