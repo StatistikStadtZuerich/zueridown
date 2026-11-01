@@ -20,18 +20,18 @@ cd_knit_chunk_opts(
 twocolumn, or lang.}
 
 \item{fig.width, fig.height}{Numeric. Default figure width/height in inches.
-When `NULL` (the default), sensible values are chosen from the `twocolumn`
-and `wide` metadata fields.}
+When \code{NULL} (the default), sensible values are chosen from the \code{twocolumn}
+and \code{wide} metadata fields.}
 
-\item{fig.pos}{Character. LaTeX figure placement specifier. Default `"h"`.}
+\item{fig.pos}{Character. LaTeX figure placement specifier. Default \code{"h"}.}
 
-\item{cache}{Logical. Knitr chunk caching. Default `FALSE`.}
+\item{cache}{Logical. Knitr chunk caching. Default \code{FALSE}.}
 
-\item{message}{Logical. Show messages. Default `FALSE`.}
+\item{message}{Logical. Show messages. Default \code{FALSE}.}
 
-\item{echo}{Logical. Echo source code. Default `FALSE`.}
+\item{echo}{Logical. Echo source code. Default \code{FALSE}.}
 
-\item{tidy}{Logical. Reformat code. Default `FALSE`.}
+\item{tidy}{Logical. Reformat code. Default \code{FALSE}.}
 }
 \description{
 Configuration of arguments to set up chunks. You can check arguments and

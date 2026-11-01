@@ -20,9 +20,9 @@ cd_page_title_box(
 \arguments{
 \item{title}{Character. Document title. Default title parameter in yml.
 Use this parameter to specify a different title
- from the title declared in the yml header of the document. If a parameter is used
- in the yml, remove the title from the yml and used this parameter to
- specify the title (see examples).}
+from the title declared in the yml header of the document. If a parameter is used
+in the yml, remove the title from the yml and used this parameter to
+specify the title (see examples).}
 
 \item{subtitle}{Character. Document subtitle. Default subtitle parameter in yml.
 Use this parameter to specify a subtitle

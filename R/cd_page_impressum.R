@@ -6,13 +6,13 @@
 #' Use this parameter to specify a subtitle
 #' different from the subtitle in the yml header of the document.
 #' @param city Character. Default "Stadt Zürich".
-#' @param department Character. Default "[department]".
-#' @param address Character. Default "[address]"
-#' @param tel Character. Default "[tel]"
-#' @param email Character. Default "[email]"
-#' @param web Character. Default "[web]"
-#' @param date Character. Default "[date]"
-#' @param authors Character. Default "[address]"
+#' @param department Character. Default "\[department\]".
+#' @param address Character. Default "\[address\]"
+#' @param tel Character. Default "\[tel\]"
+#' @param email Character. Default "\[email\]"
+#' @param web Character. Default "\[web\]"
+#' @param date Character. Default "\[date\]"
+#' @param authors Character. Default "\[address\]"
 #' @param photo TRUE or FALSE. Default TRUE. When cd_page_title_photo is used,
 #' this parameter should be TRUE.
 #' @param credit Character. Default

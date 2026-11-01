@@ -17,7 +17,7 @@ cd_caption_subcaption(
 insert the latex command 'newline' in the code.}
 
 \item{label}{Character. Optional LaTeX label for cross-referencing the
-figure or table (for example `"fig:figura1"`).}
+figure or table (for example \code{"fig:figura1"}).}
 }
 \description{
 Creates a title and a subtitle above the plot /table.

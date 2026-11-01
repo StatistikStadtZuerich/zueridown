@@ -7,16 +7,16 @@
 indiedown_pdf_document_with_asset(includes = NULL, ...)
 }
 \arguments{
-\item{includes}{Named list as produced by [rmarkdown::includes()]. The
-asset `preamble.tex` is added as `in_header` unless one is already set.}
+\item{includes}{Named list as produced by \code{\link[rmarkdown:includes]{rmarkdown::includes()}}. The
+asset \code{preamble.tex} is added as \code{in_header} unless one is already set.}
 
-\item{...}{Passed on to [rmarkdown::pdf_document()].}
+\item{...}{Passed on to \code{\link[rmarkdown:pdf_document]{rmarkdown::pdf_document()}}.}
 }
 \value{
 An R Markdown output format object.
 }
 \description{
-Wraps [rmarkdown::pdf_document()] and injects the asset package's
-`preamble.tex` and pre-processor. Downstream packages such as `zueridown`
-call this from their own output format (see [zueridown()]).
+Wraps \code{\link[rmarkdown:pdf_document]{rmarkdown::pdf_document()}} and injects the asset package's
+\code{preamble.tex} and pre-processor. Downstream packages such as \code{zueridown}
+call this from their own output format (see \code{\link[=zueridown]{zueridown()}}).
 }

@@ -7,24 +7,24 @@
 zueridown(...)
 }
 \arguments{
-\item{...}{Passed on to [indiedown_pdf_document_with_asset()] and, in turn,
-to [rmarkdown::pdf_document()].}
+\item{...}{Passed on to \code{\link[=indiedown_pdf_document_with_asset]{indiedown_pdf_document_with_asset()}} and, in turn,
+to \code{\link[rmarkdown:pdf_document]{rmarkdown::pdf_document()}}.}
 }
 \value{
 An R Markdown output format object.
 }
 \description{
 R Markdown output format for the city of Zurich corporate design. A thin
-wrapper around [indiedown_pdf_document_with_asset()] that fixes the syntax
-highlighting style and the LaTeX engine (`xelatex`, required for the
+wrapper around \code{\link[=indiedown_pdf_document_with_asset]{indiedown_pdf_document_with_asset()}} that fixes the syntax
+highlighting style and the LaTeX engine (\code{xelatex}, required for the
 bundled fonts).
 }
 \details{
-Unless the document sets `mainfont`, the main font is TeX Gyre Heros,
+Unless the document sets \code{mainfont}, the main font is TeX Gyre Heros,
 a Helvetica clone that ships with the package
 and is loaded by file name from its installation directory.
 The output therefore does not depend on the fonts installed on the system,
 and no font needs to be installed.
-Any `mainfontoptions` set in the document are appended
+Any \code{mainfontoptions} set in the document are appended
 to the options that locate the font files.
 }

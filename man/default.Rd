@@ -2,20 +2,20 @@
 % Please edit documentation in R/indiedown.R
 \name{default}
 \alias{default}
-\title{Default value for `NULL`}
+\title{Default value for \code{NULL}}
 \usage{
 default(x, default = "")
 }
 \arguments{
-\item{x}{Value to test for `NULL`.}
+\item{x}{Value to test for \code{NULL}.}
 
-\item{default}{Value to return when `x` is `NULL`. Defaults to `""`.}
+\item{default}{Value to return when \code{x} is \code{NULL}. Defaults to \code{""}.}
 }
 \value{
-`x` if not `NULL`, otherwise `default`.
+\code{x} if not \code{NULL}, otherwise \code{default}.
 }
 \description{
-Returns `x`, or `default` when `x` is `NULL`. Used throughout the `cd_*`
+Returns \code{x}, or \code{default} when \code{x} is \code{NULL}. Used throughout the \verb{cd_*}
 helpers to fall back to a sensible default when a YAML metadata field is
 absent.
 }

@@ -11,6 +11,7 @@ URL:  https://statistikstadtzuerich.github.io/zueridown/, https://github.com/Sta
 License: file LICENSE
 Copyright: See file inst/COPYRIGHTS for the bundled TeX Gyre Heros font.
 Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Depends: R (>= 3.5.0)
 Imports:

@@ -1,5 +1,7 @@
 # zueridown (development version)
 
+* The help pages use Markdown, so backticks and links render properly.
+
 * New visual snapshot tests render sample documents to PDF and compare each page byte for byte with stored images.
   The system fonts are hidden during the tests, and the toolchain is recorded next to the snapshots.
 

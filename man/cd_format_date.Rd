@@ -7,16 +7,16 @@
 cd_format_date(date, lang = default(rmarkdown::metadata$lang, "de_CH"))
 }
 \arguments{
-\item{date}{A `Date` (or object coercible by [format()]).}
+\item{date}{A \code{Date} (or object coercible by \code{\link[=format]{format()}}).}
 
-\item{lang}{Language code. Defaults to the document's `lang` metadata field,
-falling back to `"de_CH"`. German is used for `"german"`, `"de-DE"` and
-`"de-CH"`; any other value yields the English format.}
+\item{lang}{Language code. Defaults to the document's \code{lang} metadata field,
+falling back to \code{"de_CH"}. German is used for \code{"german"}, \code{"de-DE"} and
+\code{"de-CH"}; any other value yields the English format.}
 }
 \value{
 A formatted date string.
 }
 \description{
 Formats a date according to the document language: a German long date
-(e.g. `1. Januar 2024`) for German, otherwise an English long date.
+(e.g. \verb{1. Januar 2024}) for German, otherwise an English long date.
 }

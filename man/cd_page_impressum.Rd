@@ -46,7 +46,7 @@ this parameter should be TRUE.}
 \item{credit}{Character. Default}
 
 \item{space}{Character. Space betwwen Zeichenerklärung and impressum.
-Default "0cm". When the "Zeichenerklärung" above is not necessary, this 
+Default "0cm". When the "Zeichenerklärung" above is not necessary, this
 parameter should be set to 15cm (space = "15cm").}
 }
 \description{

@@ -7,7 +7,7 @@
 indiedown_path_tex(...)
 }
 \arguments{
-\item{...}{Path components passed on to [indiedown_path()].}
+\item{...}{Path components passed on to \code{\link[=indiedown_path]{indiedown_path()}}.}
 }
 \description{
 Path to indiedown assets, usable in LaTeX

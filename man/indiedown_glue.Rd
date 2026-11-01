@@ -7,17 +7,17 @@
 indiedown_glue(x, .open = "<<", .close = ">>")
 }
 \arguments{
-\item{x}{Character, often as a raw string (`r"()"`)}
+\item{x}{Character, often as a raw string (\code{r"()"})}
 
 \item{.open, .close}{The opening and closing delimiter.}
 }
 \description{
 Use the function to wrap literal LaTeX code in R. Use a raw string input
-(`r"()"`) to automatically escape quotes and backslashes, as they are common
-in LaTeX. Expressions enclosed by `<<` and `>>` will be evaluated as R code.
+(\code{r"()"}) to automatically escape quotes and backslashes, as they are common
+in LaTeX. Expressions enclosed by \verb{<<} and \verb{>>} will be evaluated as R code.
 }
 \details{
-`indiedown_glue()` uses a different default than the underlying
-`glue::glue()` (`<<` and `>>`), because braces are so common in LaTeX.
-Doubling the full delimiter (`<<<<` and `>>>>`) escapes it.
+\code{indiedown_glue()} uses a different default than the underlying
+\code{glue::glue()} (\verb{<<} and \verb{>>}), because braces are so common in LaTeX.
+Doubling the full delimiter (\verb{<<<<} and \verb{>>>>}) escapes it.
 }

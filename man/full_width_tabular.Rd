@@ -2,21 +2,21 @@
 % Please edit documentation in R/full_width_tabular.R
 \name{full_width_tabular}
 \alias{full_width_tabular}
-\title{Convert a kable table to a full-width `tabularx`}
+\title{Convert a kable table to a full-width \code{tabularx}}
 \usage{
 full_width_tabular(x)
 }
 \arguments{
-\item{x}{Character. The LaTeX code of a `kableExtra` table (typically the
-result of a `kable()` / `kable_styling()` pipeline).}
+\item{x}{Character. The LaTeX code of a \code{kableExtra} table (typically the
+result of a \code{kable()} / \code{kable_styling()} pipeline).}
 }
 \value{
-Called for its side effect: prints the rewritten LaTeX via [cat()]
-  so it can be used in an `asis` chunk.
+Called for its side effect: prints the rewritten LaTeX via \code{\link[=cat]{cat()}}
+so it can be used in an \code{asis} chunk.
 }
 \description{
-Rewrites the LaTeX produced by `kableExtra` so that a table created with
-`full_width = TRUE` uses the `tabularx` environment instead of `tabu`. The
-`tabu` package has known issues with colours and other features; `tabularx`
+Rewrites the LaTeX produced by \code{kableExtra} so that a table created with
+\code{full_width = TRUE} uses the \code{tabularx} environment instead of \code{tabu}. The
+\code{tabu} package has known issues with colours and other features; \code{tabularx}
 avoids them. See the package README for a usage example.
 }

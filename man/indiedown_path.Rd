@@ -7,8 +7,8 @@
 indiedown_path(...)
 }
 \arguments{
-\item{...}{Path components passed on to [system.file()], appended to the
-package's `indiedown` asset directory.}
+\item{...}{Path components passed on to \code{\link[=system.file]{system.file()}}, appended to the
+package's \code{indiedown} asset directory.}
 }
 \description{
 Path to indiedown assets, usable in R or LaTeX
