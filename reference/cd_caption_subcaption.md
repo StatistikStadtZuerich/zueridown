@@ -27,4 +27,4 @@ cd_caption_subcaption(
 - label:
 
   Character. Optional LaTeX label for cross-referencing the figure or
-  table (for example \`"fig:figura1"\`).
+  table (for example `"fig:figura1"`).

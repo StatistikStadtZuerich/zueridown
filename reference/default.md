@@ -1,8 +1,6 @@
-# Default value for \`NULL\`
+# Set Default Value
 
-Returns \`x\`, or \`default\` when \`x\` is \`NULL\`. Used throughout
-the \`cd\_\*\` helpers to fall back to a sensible default when a YAML
-metadata field is absent.
+Set default value of an argument. If `x` is `NULL`, `default` is used.
 
 ## Usage
 
@@ -14,12 +12,23 @@ default(x, default = "")
 
 - x:
 
-  Value to test for \`NULL\`.
+  Character string, or `NULL`
 
 - default:
 
-  Value to return when \`x\` is \`NULL\`. Defaults to \`""\`.
+  If `x` is `NULL`, `default` is used.
 
 ## Value
 
-\`x\` if not \`NULL\`, otherwise \`default\`.
+Character string
+
+## Examples
+
+``` r
+default(NULL)
+#> [1] ""
+default(NULL, "my default")
+#> [1] "my default"
+default("a string", "my default")
+#> [1] "a string"
+```

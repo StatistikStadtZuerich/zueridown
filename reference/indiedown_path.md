@@ -1,16 +1,33 @@
-# Path to indiedown assets, usable in R or LaTeX
+# Path helpers
 
-Path to indiedown assets, usable in R or LaTeX
+`indiedown_path()` creates a path to this package's indiedown assets,
+located at `inst/indiedown`.
+
+`indiedown_path_tex()` creates a path that is usable in LaTeX, with all
+special characters escaped.
 
 ## Usage
 
 ``` r
 indiedown_path(...)
+
+indiedown_path_tex(...)
 ```
 
 ## Arguments
 
 - ...:
 
-  Path components passed on to \[system.file()\], appended to the
-  package's \`indiedown\` asset directory.
+  Path components, passed on to
+  [`system.file()`](https://rdrr.io/r/base/system.file.html).
+
+## Value
+
+Character string, path to this package's indiedown assets
+
+## Examples
+
+``` r
+indiedown_path()
+#> [1] "/home/runner/.cache/R/renv/library/zueridown-0b943ced/linux-ubuntu-noble/R-4.6/x86_64-pc-linux-gnu/zueridown/indiedown"
+```

@@ -1,7 +1,7 @@
 # Format a date for the title page
 
 Formats a date according to the document language: a German long date
-(e.g. \`1. Januar 2024\`) for German, otherwise an English long date.
+(e.g. `1. Januar 2024`) for German, otherwise an English long date.
 
 ## Usage
 
@@ -13,14 +13,14 @@ cd_format_date(date, lang = default(rmarkdown::metadata$lang, "de_CH"))
 
 - date:
 
-  A \`Date\` (or object coercible by \[format()\]).
+  A `Date` (or object coercible by
+  [`format()`](https://rdrr.io/r/base/format.html)).
 
 - lang:
 
-  Language code. Defaults to the document's \`lang\` metadata field,
-  falling back to \`"de_CH"\`. German is used for \`"german"\`,
-  \`"de-DE"\` and \`"de-CH"\`; any other value yields the English
-  format.
+  Language code. Defaults to the document's `lang` metadata field,
+  falling back to `"de_CH"`. German is used for `"german"`, `"de-DE"`
+  and `"de-CH"`; any other value yields the English format.
 
 ## Value
 

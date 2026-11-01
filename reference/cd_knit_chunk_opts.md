@@ -28,26 +28,26 @@ cd_knit_chunk_opts(
 
 - fig.width, fig.height:
 
-  Numeric. Default figure width/height in inches. When \`NULL\` (the
-  default), sensible values are chosen from the \`twocolumn\` and
-  \`wide\` metadata fields.
+  Numeric. Default figure width/height in inches. When `NULL` (the
+  default), sensible values are chosen from the `twocolumn` and `wide`
+  metadata fields.
 
 - fig.pos:
 
-  Character. LaTeX figure placement specifier. Default \`"h"\`.
+  Character. LaTeX figure placement specifier. Default `"h"`.
 
 - cache:
 
-  Logical. Knitr chunk caching. Default \`FALSE\`.
+  Logical. Knitr chunk caching. Default `FALSE`.
 
 - message:
 
-  Logical. Show messages. Default \`FALSE\`.
+  Logical. Show messages. Default `FALSE`.
 
 - echo:
 
-  Logical. Echo source code. Default \`FALSE\`.
+  Logical. Echo source code. Default `FALSE`.
 
 - tidy:
 
-  Logical. Reformat code. Default \`FALSE\`.
+  Logical. Reformat code. Default `FALSE`.

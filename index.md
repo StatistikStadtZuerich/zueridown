@@ -76,6 +76,17 @@ remotes::install_git("https://cmp-sdlc.stzh.ch/OE-7035/ssz-da/libraries/zueriver
 Otherwise you need to create a personal access token in your settings,
 and use this as a password, together with your GitLab username.
 
+### Fonts
+
+`zueridown` uses Helvetica Neue LT Pro, the font of the corporate
+design, if it is installed on your computer: 65 Medium as regular and 85
+Heavy as bold. The font is licensed and does not ship with the package.
+Without it, `zueridown` uses TeX Gyre Heros, a free Helvetica clone that
+ships with the package, and says once per session how to install fonts.
+A document can set another font in its `mainfont` field, and a user in
+the option `zueridown.mainfont`, see
+[`?zueridown`](https://statistikstadtzuerich.github.io/zueridown/reference/zueridown.md).
+
 ## Basic Template
 
 After installation, a new R Markdown template is available in R Studio.
