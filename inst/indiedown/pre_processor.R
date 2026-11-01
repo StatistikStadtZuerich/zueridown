@@ -50,12 +50,17 @@ pre_processor <- function(
     }
   }
 
-  # pass twocolumn as classoption
+  # pass twocolumn as classoption.
+  # A variable overrides the metadata field of the same name,
+  # so the `classoption` from the document are passed on as well,
+  # one variable per option so that pandoc builds the list itself.
   if (isTRUE(metadata$twocolumn)) {
+    classoption <- unique(c(unlist(metadata$classoption), "twocolumn"))
     args <- c(
       args,
-      "--variable",
-      paste0("classoption:", metadata$classoption, "twocolumn", collapse = ",")
+      unlist(lapply(classoption, function(x) {
+        c("--variable", paste0("classoption:", x))
+      }))
     )
   }
 

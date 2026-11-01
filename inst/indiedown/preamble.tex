@@ -81,7 +81,17 @@
 
 % to change between one columns and more columns 
 % without a new page
+% multicol declares `twocolumn` as an option that only warns
+% "May not work with the twocolumn option" when it is loaded,
+% even if `multicols` is not used in the document,
+% and it does work nested in a column.
+% Hide the class options from it while it is loaded to avoid the warning.
+\makeatletter
+\let\indiedown@classoptionslist\@classoptionslist
+\let\@classoptionslist\@empty
 \usepackage{multicol}
+\let\@classoptionslist\indiedown@classoptionslist
+\makeatother
 \setlength{\columnsep}{15pt}
 % to set the picture in first page without changing the geometry
 \usepackage{tikzpagenodes}

@@ -1,5 +1,15 @@
 # zueridown (development version)
 
+* `twocolumn: true` no longer breaks `classoption`.
+  Every class option from the document is now kept next to `twocolumn`,
+  where `classoption: landscape` used to reach LaTeX as the unknown option `landscapetwocolumn`.
+
+* Documents with `twocolumn: true` no longer warn "Package multicol Warning: May not work with the twocolumn option".
+  `multicols` is still available in two-column documents.
+
+* The documentation is generated with roxygen2 8, which drops `RoxygenNote` from `DESCRIPTION`.
+  The help pages are unchanged.
+
 * The help pages use Markdown, so backticks and links render properly.
 
 * New visual snapshot tests render sample documents to PDF and compare each page byte for byte with stored images.
