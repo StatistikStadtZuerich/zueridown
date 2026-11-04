@@ -20,7 +20,8 @@ Imports:
     glue,
     yaml,
     withr,
-    utils
+    utils,
+    rlang (>= 1.0.0)
 Suggests:
     callr,
     markdown,
@@ -29,7 +30,7 @@ Suggests:
     ggplot2,
     gridExtra,
     pdftools,
-    systemfonts,
+    systemfonts (>= 1.3.0),
     testthat (>= 3.0.0),
     tinytex
 Config/testthat/edition: 3

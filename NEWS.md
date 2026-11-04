@@ -1,5 +1,11 @@
 # zueridown (development version)
 
+* The licensed font is now also found when it is installed for the current user (Windows, macOS and Linux), and it is loaded from its files.
+  The new option `zueridown.font_path` names a folder that holds the font files.
+  Fonts named in the document are handled the same way.
+  If `fc-list` is unavailable, systemfonts (>= 1.3.0) is used instead; without it the bundled font is the fallback, and a message says so.
+  The message points to how to install fonts on each operating system.
+
 * The main font is now the licensed Helvetica Neue LT Pro, 65 Medium with 85 Heavy as bold, if all of these faces are installed.
   Otherwise the bundled TeX Gyre Heros is used, and a message names the fallback and explains how to install fonts.
   The message appears at the start of the render and again at its end, once the PDF is written.
