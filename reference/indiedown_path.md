@@ -29,5 +29,5 @@ Character string, path to this package's indiedown assets
 
 ``` r
 indiedown_path()
-#> [1] "/home/runner/.cache/R/renv/library/zueridown-0b943ced/linux-ubuntu-noble/R-4.6/x86_64-pc-linux-gnu/zueridown/indiedown"
+#> [1] "/home/runner/.cache/R/renv/library/zueridown-0b943ced/linux-ubuntu-resolute/R-4.6/x86_64-pc-linux-gnu/zueridown/indiedown"
 ```
