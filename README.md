@@ -65,8 +65,7 @@ Otherwise you need to create a personal access token in your settings, and use t
 65 Medium as regular and 85 Heavy as bold.
 The font is licensed and does not ship with the package.
 It is enough to install it for the current user, for example in Settings > Personalization > Fonts on Windows.
-If you cannot install fonts, copy the font files to a folder and set `options(zueridown.font_path = "<folder>")`, for example in `.Rprofile`.
-If the font is not found right after installing it, restart R: systemfonts, which is used where `fc-list` is not available, lists the installed fonts only once per session.
+If you cannot install fonts, copy the font files, named like `HelveticaNeueLTPro-Md.otf` or `.ttf`, to a folder and set `options(zueridown.font_path = "<folder>")`, for example in `.Rprofile`.
 Without the font, `zueridown` uses TeX Gyre Heros, a free Helvetica clone that ships with the package, and a message says how to install fonts.
 The message is shown at the start and at the end of the render, and again in the same R session only if its advice changes.
 A document can set another font in its `mainfont` field, and a user in the option `zueridown.mainfont`, see `?zueridown`.

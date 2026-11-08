@@ -23,9 +23,9 @@ bundled fonts).
 The main font is Helvetica Neue LT Pro, the font of the corporate design,
 if it is installed: 65 Medium as regular and 85 Heavy as bold.
 The font is licensed and does not ship with the package.
-It is loaded from its font files, which are found
-if the font is installed for the current user or for all users.
-Users who cannot install fonts can copy the font files to a folder
+It is found if it is installed for the current user or for all users.
+Users who cannot install fonts can copy the font files,
+named like \code{HelveticaNeueLTPro-Md.otf} or \code{.ttf}, to a folder
 and set the option \code{zueridown.font_path} to that folder, e.g. in \code{.Rprofile}.
 If the font is not found, the main font is TeX Gyre Heros,
 a Helvetica clone that ships with the package
@@ -34,11 +34,19 @@ and a message explains how to make the font available.
 The message is shown at the start and at the end of the render,
 and again in the same R session only if its advice changes.
 Any \code{mainfontoptions} set in the document are appended
-to the options of the font.
+to the options of Helvetica Neue LT Pro or TeX Gyre Heros.
 
 A document can use another font by setting \code{mainfont} in its YAML header,
 a user by setting the option \code{zueridown.mainfont}, e.g. in \code{.Rprofile}.
-The font can be the name of an installed font or a font file.
-If it is not found, Helvetica Neue LT Pro or TeX Gyre Heros
-is used instead, with a message.
+The font can be the name of an installed font,
+which is looked up like Helvetica Neue LT Pro,
+or the file name of a font, with its folder as \verb{Path=} in \code{mainfontoptions},
+relative to the folder of the document.
+The \code{mainfontoptions} set in the document are the options of this font.
+If the font is not found, Helvetica Neue LT Pro or TeX Gyre Heros
+is used instead, without these options, and a message explains why.
+The font is used as named, unchecked, if the \code{mainfontoptions} set \verb{Path=},
+if it or a face that they name is a font file, which LaTeX looks up itself,
+or if it is not found as font files and \code{fc-list} is not available;
+a font file named with its folder is not found.
 }

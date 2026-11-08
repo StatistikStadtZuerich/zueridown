@@ -9,8 +9,8 @@ secnumdepth: 2
 fontsize: "10pt"
 
 # Preferred main font: the licensed Helvetica Neue LT Pro of the corporate design,
-# named by PostScript name and loaded from its font files,
-# if it is installed or in the folder of the option `zueridown.font_path`:
+# named by PostScript name, which also names its font files,
+# used if it is installed or in the folder of the option `zueridown.font_path`:
 # 65 Medium as regular, 85 Heavy as bold, and no italics.
 preferredmainfont: HelveticaNeueLTPro-Md
 preferredmainfontoptions:
@@ -21,8 +21,7 @@ preferredmainfontoptions:
 # Fallback main font: TeX Gyre Heros, a free Helvetica clone,
 # shipped in inst/indiedown/fonts and loaded by path.
 # A document can name another font in its `mainfont` field,
-# a user in the option `zueridown.mainfont`;
-# if that font is not found, the preferred or fallback font is used.
+# a user in the option `zueridown.mainfont`, which is used if it is found.
 mainfont: texgyreheros-regular.otf
 mainfontoptions:
 - Path=<<indiedown_path>>/fonts/

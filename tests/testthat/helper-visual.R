@@ -119,9 +119,9 @@ expect_pdf_snapshot <- function(name, rmd, dpi = 100) {
   # poppler, however, substitutes the fonts that R's pdf() device does not
   # embed (Helvetica) via fontconfig, so figure text would otherwise depend on
   # the installed fonts, or be dropped if no font is visible at all.
-  # The font lookup sees FONTCONFIG_FILE through fc-list, but it also searches
-  # the font folders and asks systemfonts, which do not. The option
-  # `zueridown.system_fonts = FALSE` turns these off, and the font options of
+  # The font lookup sees FONTCONFIG_FILE through fc-list, but on Windows it
+  # also searches the folder of the user's fonts, which does not. The option
+  # `zueridown.system_fonts = FALSE` turns this off, and the font options of
   # the user are unset, so that an installed Helvetica Neue LT Pro is never
   # found and the snapshots always show TeX Gyre Heros.
   withr::local_options(
